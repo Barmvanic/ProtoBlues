@@ -18,10 +18,10 @@ public class MovementPlayer : MonoBehaviour
 
     void Movement()
     {
-        if (Input.Getkey(KeyCode.LeftArrow))
+         //if (Input.Getkey(KeyCode.LeftArrow))
         //si une touche est appuyee
         {
-            transform.Translate(0.05f, 0, 0);
+            //transform.Translate(0.05f, 0, 0);
 
         }
     }
