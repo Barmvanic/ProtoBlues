@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
-    [SerializeField] private float speed = 13.0f;
+    public float speed; 
+    public float jump;
+
+
+    private float Move;
+
+    public Rigidbody2D rb;
+
+    public bool isJumping; 
+
+
+    
    
 
     void Start()
@@ -15,15 +26,34 @@ public class MovementPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical"); 
+        Move = Input.GetAxis("Horizontal");
 
-        Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
+        rb.velocity = new Vector2(speed * Move, rb.velocity.y); 
 
-        transform.Translate(direction * speed * Time.deltaTime);
+        if (Input.GetButtonDown("Jump") && isJumping == false) //p1 in the air whit the jump then the function will not work
+        {
+            rb.AddForce(new Vector2( rb.velocity.x, jump));
+        }
+        
+            
     }
 
-   
+   private void OncollisionEnter2D(Collision2D other) //hit different game object
+    {
+        if (other.gameObject.CompareTag("Floor")) // collide an object with a tag 
+        { 
+            isJumping = false; //not jumping
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D other) //leaving the floor 
+    {
+        if(other.gameObject.CompareTag("Floor")) 
+        { 
+            isJumping = true; //jumping
+        }
+    }
 
 
 }
