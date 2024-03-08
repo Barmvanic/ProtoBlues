@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float speed = 13.0f;
+   
+
     void Start()
     {
-        Movement();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical"); 
+
+        Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
+
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    void Movement()
-    {
-         //if (Input.Getkey(KeyCode.LeftArrow))
-        //si une touche est appuyee
-        {
-            //transform.Translate(0.05f, 0, 0);
+   
 
-        }
-    }
 
 }
