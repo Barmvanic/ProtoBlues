@@ -20,7 +20,7 @@ public class MovementPlayer : MonoBehaviour
 
     void Start()
     {
-        
+        rb= GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class MovementPlayer : MonoBehaviour
             
     }
 
-   private void OncollisionEnter2D(Collision2D other) //hit different game object
+   private void OnCollisionEnter2D(Collision2D other) //hit different game object
     {
         if (other.gameObject.CompareTag("Floor")) // collide an object with a tag 
         { 
