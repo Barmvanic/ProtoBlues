@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
@@ -20,29 +21,32 @@ public class MovementPlayer : MonoBehaviour
 
     void Start()
     {
-        rb= GetComponent<Rigidbody2D>();
+        Movement();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move = Input.GetAxis("Horizontal");
-
-        rb.velocity = new Vector2(speed * Move, rb.velocity.y); 
-
-        if (Input.GetButtonDown("Jump") && isJumping == false) //p1 in the air whit the jump then the function will not work
-        {
-            rb.AddForce(new Vector2( rb.velocity.x, jump));
-        }
-        
-            
+        Movement();      
     }
 
-   private void OnCollisionEnter2D(Collision2D other) //hit different game object
+    void Movement ()
+    {
+        Move = Input.GetAxis("Horizontal");
+
+        rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+
+        if (Input.GetButtonDown("Jump") && !isJumping) //p1 in the air whit the jump then the function will not work
+        {
+            rb.AddForce(new Vector2(rb.velocity.x, jump * 10));
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other) //hit different game object
     {
         if (other.gameObject.CompareTag("Floor")) // collide an object with a tag 
         { 
-            isJumping = false; //not jumping
+            isJumping = false; // not jumping
         }
 
     }
@@ -51,7 +55,7 @@ public class MovementPlayer : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Floor")) 
         { 
-            isJumping = true; //jumping
+            isJumping = true; // jumping
         }
     }
 
