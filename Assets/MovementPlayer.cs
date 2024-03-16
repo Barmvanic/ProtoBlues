@@ -13,12 +13,11 @@ public class MovementPlayer : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public bool isJumping;
-    bool doubleJump; 
+    [SerializeField] Double_Jump Pieds;
+    bool doubleJump;
 
+  
 
-    
-   
 
     void Start()
     {
@@ -38,18 +37,18 @@ public class MovementPlayer : MonoBehaviour
 
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump") && !isJumping) //p1 in the air whit the jump then the function will not work
+        if (Input.GetButtonDown("Jump") && !Pieds.isJumping) //p1 in the air whit the jump then the function will not work
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump * 10));
             doubleJump = true; //p1 jump while on the floor, double jump will be true 
         }
-        else if (doubleJump)
+        else if (Input.GetButtonDown("Jump") && doubleJump)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump * 0.4f); //when doubleJump is true P1 will jump again & set at 40% of the first jump
             doubleJump = false; //after the second jump the doubleJump will be false 
         }
     }
-    private void OnCollisionEnter2D(Collision2D other) //hit different game object
+    /*private void OnCollisionEnter2D(Collision2D other) //hit different game object
     {
         if (other.gameObject.CompareTag("Floor")) // collide an object with a tag 
         { 
@@ -64,7 +63,7 @@ public class MovementPlayer : MonoBehaviour
         { 
             isJumping = true; // jumping
         }
-    }
+    }*/
 
 
 }
