@@ -31,6 +31,7 @@ public class MovementPlayer : MonoBehaviour
         Movement();      
     }
 
+<<<<<<< Updated upstream
     void Movement ()
     {
         Move = Input.GetAxis("Horizontal");
@@ -49,6 +50,9 @@ public class MovementPlayer : MonoBehaviour
         }
     }
     /*private void OnCollisionEnter2D(Collision2D other) //hit different game object
+=======
+   private void OnCollisionEnter2D(Collision2D other) //hit different game object
+>>>>>>> Stashed changes
     {
         if (other.gameObject.CompareTag("Floor")) // collide an object with a tag 
         { 
