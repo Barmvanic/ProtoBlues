@@ -31,7 +31,6 @@ public class MovementPlayer : MonoBehaviour
         Movement();      
     }
 
-<<<<<<< Updated upstream
     void Movement ()
     {
         Move = Input.GetAxis("Horizontal");
@@ -49,25 +48,4 @@ public class MovementPlayer : MonoBehaviour
             doubleJump = false; //after the second jump the doubleJump will be false 
         }
     }
-    /*private void OnCollisionEnter2D(Collision2D other) //hit different game object
-=======
-   private void OnCollisionEnter2D(Collision2D other) //hit different game object
->>>>>>> Stashed changes
-    {
-        if (other.gameObject.CompareTag("Floor")) // collide an object with a tag 
-        { 
-            isJumping = false; // not jumping
-        }
-
-    }
-
-    private void OnCollisionExit2D(Collision2D other) //leaving the floor 
-    {
-        if(other.gameObject.CompareTag("Floor")) 
-        { 
-            isJumping = true; // jumping
-        }
-    }*/
-
-
 }
