@@ -810,7 +810,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f4d749f47cb98428a65cd57712e465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1Collider: {fileID: 1806018357}
+  dropKey: 274
+  fallDelay: 0.3
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1584,6 @@ GameObject:
   - component: {fileID: 1806018357}
   - component: {fileID: 1806018356}
   - component: {fileID: 1806018358}
-  - component: {fileID: 1806018359}
   m_Layer: 0
   m_Name: P1
   m_TagString: Player
@@ -1748,19 +1748,6 @@ MonoBehaviour:
   jump: 18
   rb: {fileID: 1806018356}
   Pieds: {fileID: 1937114708}
---- !u!114 &1806018359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806018353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f4d749f47cb98428a65cd57712e465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  P1Collider: {fileID: 1806018357}
 --- !u!1 &1851032574
 GameObject:
   m_ObjectHideFlags: 0
