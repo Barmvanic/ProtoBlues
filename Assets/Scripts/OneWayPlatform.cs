@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class OneWayPlatform : MonoBehaviour
 {
-    public KeyCode dropKey = KeyCode.DownArrow; // key to fall through the platform
-
     private PlatformEffector2D platformEffector; // component platform effector
     public float fallDelay = 0.3f; //delay before the platform will be solid 
     private bool isFalling = false; // p1 falling or not
@@ -20,7 +18,7 @@ public class OneWayPlatform : MonoBehaviour
     private void Update()
     {
         //change the angle of the platform when the key is pressed 
-        if (Input.GetKey(dropKey) && !isFalling)
+        if(Input.GetButtonDown("FallThrough") && !isFalling)
         {
             StartCoroutine(FallThroughPlatform());
         }

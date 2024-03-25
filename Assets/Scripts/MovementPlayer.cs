@@ -34,7 +34,7 @@ public class MovementPlayer : MonoBehaviour
     void Movement ()
     {
         Move = Input.GetAxis("Horizontal");
-
+     
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && !Pieds.isJumping) //p1 in the air whit the jump then the function will not work
@@ -44,7 +44,7 @@ public class MovementPlayer : MonoBehaviour
         }
         else if (Input.GetButtonDown("Jump") && doubleJump)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump * 0.4f); //when doubleJump is true P1 will jump again & set at 40% of the first jump
+            rb.velocity = new Vector2(rb.velocity.x, jump * 0.5f); //when doubleJump is true P1 will jump again & set at 40% of the first jump
             doubleJump = false; //after the second jump the doubleJump will be false 
         }
     }
