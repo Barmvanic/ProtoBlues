@@ -44,14 +44,4 @@ public class Script_Collectible : MonoBehaviour
         return _waypoints[_currentWaypointIndex];
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // � debug lol
-        Debug.Log("Destroy Collision");
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
-    }
 }

@@ -5,24 +5,21 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Script_Notes : MonoBehaviour
 {
-    private P1_player; 
+    [SerializeField] Inventory_notes inventory_Notes; 
+  
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.Find("P1").GetComponent<P1>(); ; 
-        if(_player == null)
-        {
-            Debug.LogError("Player is null"); 
-        }
+       
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(UnityEngine.Collision2D collision)
     {
-        if(other.gameObject.tag = "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            _player.AddCoins(1);
+            inventory_Notes.notes++;
 
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 }
