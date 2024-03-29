@@ -6,7 +6,7 @@ using UnityEngine;
 public class Script_ScoringNotes : MonoBehaviour
 {
 
-    public Inventory_notes Notes;
+    public Inventory_notes Notes; 
     [SerializeField] TextMeshProUGUI textScore;
 
     // Update is called once per frame
