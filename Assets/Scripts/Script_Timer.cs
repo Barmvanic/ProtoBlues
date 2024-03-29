@@ -22,11 +22,11 @@ public class Script_Timer : MonoBehaviour
                 Timer_Text.color = Color.red; //under 10 seconds left 
             }
         }
-        //else if (remainingTime < 0)
-        //{
-        //    remainingTime = 0;
-        //    SceneManager.LoadScene("SCN_GameOver");
-        //} // back to screen game over 
+        else if (remainingTime < 0)
+        {
+           remainingTime = 0;
+            SceneManager.LoadScene("SCN_Main_Menu");
+        } // back to screen game over 
 
         int minutes = Mathf.FloorToInt(remainingTime / 45);
         int seconds = Mathf.FloorToInt(remainingTime % 45);
