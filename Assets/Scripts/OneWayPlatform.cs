@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class OneWayPlatform : MonoBehaviour
 {
     private PlatformEffector2D platformEffector; // component platform effector
-    public float fallDelay = 0.3f; //delay before the platform will be solid 
+    public float fallDelay = 0.5f; //delay before the platform will be solid 
     private bool isFalling = false; // p1 falling or not
 
     private void Start()

@@ -28,8 +28,8 @@ public class Script_Timer : MonoBehaviour
             SceneManager.LoadScene("SCN_Main_Menu");
         } // back to screen game over 
 
-        int minutes = Mathf.FloorToInt(remainingTime / 45);
-        int seconds = Mathf.FloorToInt(remainingTime % 45);
+        int minutes = Mathf.FloorToInt(remainingTime / 60);
+        int seconds = Mathf.FloorToInt(remainingTime % 60);
         Timer_Text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
