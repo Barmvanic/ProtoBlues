@@ -44,7 +44,7 @@ public class MovementPlayer : MonoBehaviour
         }
         else if (Input.GetButtonDown("Jump") && doubleJump)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump * 0.2f); //when doubleJump is true P1 will jump again & set at 40% of the first jump
+            rb.velocity = new Vector2(rb.velocity.x, jump * 0.3f); //when doubleJump is true P1 will jump again & set at 40% of the first jump
             doubleJump = false; //after the second jump the doubleJump will be false 
         }
     }
