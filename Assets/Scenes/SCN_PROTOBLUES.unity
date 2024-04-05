@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer_Text: {fileID: 1512488825}
-  remainingTime: 30
+  remainingTime: 60
 --- !u!114 &306525122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +688,7 @@ Camera:
   far clip plane: 1000
   field of view: 24.162466
   orthographic: 1
-  orthographic size: 150.97086
+  orthographic size: 44.3801
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
