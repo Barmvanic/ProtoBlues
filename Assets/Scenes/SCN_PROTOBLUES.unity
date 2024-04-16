@@ -2437,10 +2437,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1157863191}
   - component: {fileID: 1157863193}
-  - component: {fileID: 1157863192}
   - component: {fileID: 1157863194}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: Moving platform
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2461,21 +2460,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1152409601}
   m_LocalEulerAnglesHint: {x: 2.105, y: 1.459, z: 0.305}
---- !u!114 &1157863192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157863190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80a5b152e4e60df428ce83c70a7c34ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToTogglePlatform: 2
-  currentTime: 0
-  enabled: 1
 --- !u!212 &1157863193
 SpriteRenderer:
   m_ObjectHideFlags: 0
