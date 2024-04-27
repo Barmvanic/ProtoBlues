@@ -8,6 +8,6 @@ public class Script_Buttons : MonoBehaviour
     // Start is called before the first frame update
     public void Start_Button()
     {
-        SceneManager.LoadScene("SCN_PROTOBLUES");
+        SceneManager.LoadScene("SCN_NIVEAU1");
     }
 }
