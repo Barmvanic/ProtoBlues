@@ -37,20 +37,22 @@ public class Script_QTESys : MonoBehaviour
             }
         }
 
-        if(QTEGen ==1)
+        if(QTEGen == 1)
         {
             if (Input.anyKeyDown) // check if the user press the correct key
             {
-                if (Input.GetButtonDown ("[EKey]"))
+                if (Input.GetButtonDown("EKey"))
                 {
                     CorrectKey = 1;
-                    StartCoroutine (KeyPressing ()); 
+                    StartCoroutine (KeyPressing ());
+                    Debug.Log(" E presse");
                 }
                 else
                 {
                     CorrectKey = 2;
                     StartCoroutine (KeyPressing ());
                 }
+                
             }
         }
 
@@ -58,16 +60,18 @@ public class Script_QTESys : MonoBehaviour
         {
             if (Input.anyKeyDown) // check if the user press the correct key
             {
-                if (Input.GetButtonDown("[RKey]"))
+                if (Input.GetButtonDown("RKey"))
                 {
                     CorrectKey = 1;
                     StartCoroutine (KeyPressing ());
+                    Debug.Log(" R presse");
                 }
                 else
                 {
                     CorrectKey = 2;
                     StartCoroutine (KeyPressing ());
                 }
+                
             }
         }
 
@@ -75,16 +79,18 @@ public class Script_QTESys : MonoBehaviour
         {
             if (Input.anyKeyDown) // check if the user press the correct key
             {
-                if (Input.GetButtonDown("[TKey]"))
+                if (Input.GetButtonDown("TKey"))
                 {
                     CorrectKey = 1;
                     StartCoroutine (KeyPressing ());
+                    Debug.Log(" R presse");
                 }
                 else
                 {
                     CorrectKey = 2;
                     StartCoroutine (KeyPressing ());
                 }
+                
             }
         }
     }
