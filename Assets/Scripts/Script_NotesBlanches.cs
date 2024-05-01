@@ -9,15 +9,11 @@ public class Script_NotesBlanches : MonoBehaviour
 
     bool moveNote;
 
-    GameObject target;
-    GameObject target1;
-    GameObject target2;
+    [SerializeField] GameObject target;
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("toNotes");
-        target1 = GameObject.FindGameObjectWithTag("toNotes1");
-        target2 = GameObject.FindGameObjectWithTag("toNotes2");
+
     }
 
     
@@ -26,8 +22,7 @@ public class Script_NotesBlanches : MonoBehaviour
         if (moveNote)
         {
             transform.position = Vector3.Lerp(transform.position, target.transform.position, speed *Time.deltaTime);
-            transform.position = Vector3.Lerp(transform.position, target1.transform.position, speed * Time.deltaTime);
-            transform.position = Vector3.Lerp(transform.position, target2.transform.position, speed * Time.deltaTime);
+            
         }
         
     }

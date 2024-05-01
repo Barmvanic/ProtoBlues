@@ -1377,7 +1377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fe6eca80012e04ca24177ef929f4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.81
+  speed: 4
+  target: {fileID: 1868390462}
 --- !u!1 &430917636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,7 +2644,7 @@ GameObject:
   - component: {fileID: 763373542}
   m_Layer: 0
   m_Name: toNotes 1
-  m_TagString: toNotes1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3933,7 +3934,7 @@ GameObject:
   - component: {fileID: 1339703917}
   - component: {fileID: 1339703916}
   - component: {fileID: 1339703919}
-  - component: {fileID: 1339703918}
+  - component: {fileID: 1339703920}
   m_Layer: 0
   m_Name: Note blanche 1
   m_TagString: Untagged
@@ -4009,19 +4010,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1469341352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1339703918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339703915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fe6eca80012e04ca24177ef929f4cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3.81
 --- !u!61 &1339703919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4067,6 +4055,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1339703920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339703915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fe6eca80012e04ca24177ef929f4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  target: {fileID: 763373541}
 --- !u!1 &1406414565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,7 +4672,7 @@ GameObject:
   - component: {fileID: 1577492159}
   - component: {fileID: 1577492158}
   - component: {fileID: 1577492161}
-  - component: {fileID: 1577492160}
+  - component: {fileID: 1577492162}
   m_Layer: 0
   m_Name: Note blanche 2
   m_TagString: Untagged
@@ -4746,19 +4748,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1469341352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1577492160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577492157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fe6eca80012e04ca24177ef929f4cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3.81
 --- !u!61 &1577492161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4804,6 +4793,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1577492162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577492157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fe6eca80012e04ca24177ef929f4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  target: {fileID: 1814385703}
 --- !u!1 &1654808421
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,7 +5159,7 @@ GameObject:
   - component: {fileID: 1814385704}
   m_Layer: 0
   m_Name: toNotes 2
-  m_TagString: toNotes2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5413,7 +5416,7 @@ GameObject:
   - component: {fileID: 1868390463}
   m_Layer: 0
   m_Name: toNotes
-  m_TagString: toNotes
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
