@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Floor
   - OneWayPlatform
+  - toNotes
+  - toNotes1
+  - toNotes2
   layers:
   - Default
   - TransparentFX
