@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Script_Notes : MonoBehaviour
 {
-    [SerializeField] Inventory_notes inventory_Notes; 
-  
+    [SerializeField] Script_Timer timer; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class Script_Notes : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            inventory_Notes.notes++;
+            timer.remainingTime -= 5f; 
 
             Destroy(gameObject);
         }
