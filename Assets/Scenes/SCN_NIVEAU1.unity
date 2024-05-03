@@ -159,12 +159,12 @@ MonoBehaviour:
   m_Priority: 100
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 735862471}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 104.89
     OrthographicSize: 7.29
-    NearClipPlane: 0.01
-    FarClipPlane: 999.44
+    NearClipPlane: 0.49
+    FarClipPlane: 1001.18
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 112898576}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 1, z: -12.28}
+  m_LocalPosition: {x: -11.550131, y: 5.904998, z: -3.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -718,7 +718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -699, y: -466}
+  m_AnchoredPosition: {x: -693, y: -466}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265361358
@@ -834,7 +834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &284190602
 Transform:
   m_ObjectHideFlags: 0
@@ -909,7 +909,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 9.286368
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -922,9 +922,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 999.44
-  field of view: 60
+  near clip plane: 0.49
+  far clip plane: 1001.18
+  field of view: 104.89
   orthographic: 0
   orthographic size: 7.29
   m_Depth: -1
@@ -951,7 +951,7 @@ Transform:
   m_GameObject: {fileID: 341116981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 1, z: -12.28}
+  m_LocalPosition: {x: -11.550131, y: 5.904998, z: -3.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1503,7 +1503,7 @@ Transform:
   m_GameObject: {fileID: 430917636}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.44327253, w: 0.896387}
-  m_LocalPosition: {x: 1.7920694, y: -0.665591, z: -0.009373776}
+  m_LocalPosition: {x: 1.77, y: -0.65, z: -0.009373776}
   m_LocalScale: {x: 2.5818002, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2414,7 +2414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763373542}
   m_Layer: 0
-  m_Name: toNotes 1
+  m_Name: toNotes 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2429,7 +2429,7 @@ Transform:
   m_GameObject: {fileID: 763373541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.459999, y: -5.47, z: 11.75}
+  m_LocalPosition: {x: 10.24, y: -4.32, z: 11.75}
   m_LocalScale: {x: 0.93813, y: 0.93813, z: 0.93813}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2572,7 +2572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &936874507
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3929,7 +3929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514518561}
   m_Layer: 0
-  m_Name: === CAMERA ===
+  m_Name: === CAMERAS ===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4290,7 +4290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689594538}
   m_Layer: 0
-  m_Name: Notes_noires
+  m_Name: Notes_rouges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4365,7 +4365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814385704}
   m_Layer: 0
-  m_Name: toNotes 2
+  m_Name: 'toNotes '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4380,7 +4380,7 @@ Transform:
   m_GameObject: {fileID: 1814385703}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.459999, y: -5.99, z: 11.75}
+  m_LocalPosition: {x: 10.24, y: -2.99, z: 11.75}
   m_LocalScale: {x: 0.93813, y: 0.93813, z: 0.93813}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4560,7 +4560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1868390463}
   m_Layer: 0
-  m_Name: toNotes
+  m_Name: toNotes 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4575,7 +4575,7 @@ Transform:
   m_GameObject: {fileID: 1868390462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.46, y: -5.15, z: 11.75}
+  m_LocalPosition: {x: 10.24, y: -3.62, z: 11.75}
   m_LocalScale: {x: 0.93813, y: 0.93813, z: 0.93813}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5045,7 +5045,7 @@ Transform:
   m_GameObject: {fileID: 2078494260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.73, y: 3.37, z: -136}
+  m_LocalPosition: {x: 1.5081697, y: -0.27810025, z: -7.313942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

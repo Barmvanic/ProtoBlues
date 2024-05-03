@@ -10,7 +10,6 @@ public class Script_Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI Timer_Text;
     public float remainingTime;
 
-    // Update is called once per frame
     void Update()
     {
         if (remainingTime > 0)
@@ -21,6 +20,8 @@ public class Script_Timer : MonoBehaviour
             {
                 Timer_Text.color = Color.red; //under 10 seconds left 
             }
+
+        
         }
         else if (remainingTime < 0)
         {
