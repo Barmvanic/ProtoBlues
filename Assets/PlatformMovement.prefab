@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7807368694630655532}
   - component: {fileID: 724882929304583722}
   m_Layer: 0
-  m_Name: Assets_interaction
+  m_Name: PlatformMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -1742482400, guid: 6227b67722e7ef74c86b944f6d77aae3, type: 3}
-  m_Color: {r: 0.8679245, g: 0, b: 0.12765388, a: 1}
+  m_Color: {r: 1, g: 0.9160185, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

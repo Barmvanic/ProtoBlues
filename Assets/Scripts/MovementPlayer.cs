@@ -15,8 +15,9 @@ public class MovementPlayer : MonoBehaviour
 
     [SerializeField] Double_Jump Pieds;
     bool doubleJump;
-    bool facingRight = true; 
+    bool facingRight = true;
 
+    
   
 
 
@@ -24,6 +25,7 @@ public class MovementPlayer : MonoBehaviour
     {
         Movement();
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -70,5 +72,7 @@ public class MovementPlayer : MonoBehaviour
         facingRight = !facingRight; 
 
     }
+
+  
 
 }

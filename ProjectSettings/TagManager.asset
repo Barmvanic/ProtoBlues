@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - OneWayPlatform
+  - PlatformMovement
   layers:
   - Default
   - TransparentFX
