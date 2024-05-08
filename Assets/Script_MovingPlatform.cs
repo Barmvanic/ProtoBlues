@@ -63,9 +63,11 @@ public class Script_MovingPlatform : MonoBehaviour
     private void OnCollisionExit2D(Collision2D other)
     {
         var platformMovement = other.gameObject.GetComponent<PlatformMovement>();
+        Debug.Log("stopped");
         if (platformMovement != null)
         {
             platformMovement.ResetParent();
+            Debug.Log("verry stopped"); 
         }
     }
 }
