@@ -7,14 +7,16 @@ public class MovementPlayer : MonoBehaviour
 {
     public float speed; 
     public float jump;
+    [Range(1,10)]
+    public float jumpVelocity; 
 
 
     private float Move;
 
     public Rigidbody2D rb;
 
-    [SerializeField] Double_Jump Pieds;
-    bool doubleJump;
+    //[SerializeField] Double_Jump Pieds;
+    //bool doubleJump;
     bool facingRight = true;
 
     
@@ -28,7 +30,7 @@ public class MovementPlayer : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Movement();
@@ -51,15 +53,16 @@ public class MovementPlayer : MonoBehaviour
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
 
-        if (Input.GetButtonDown("Jump") && !Pieds.isJumping) //p1 in the air whit the jump then the function will not work
+        if (Input.GetButtonDown("Jump") /*&& !Pieds.isJumping*/) //p1 in the air whit the jump then the function will not work
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump * 10));
-            doubleJump = true; //p1 jump while on the floor, double jump will be true 
+           /* doubleJump = true;*/ //p1 jump while on the floor, double jump will be true 
+            GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity; 
         }
-        else if (Input.GetButtonDown("Jump") && doubleJump)
+        else if (Input.GetButtonDown("Jump") /*&& doubleJump*/)
         {
             rb.velocity = new Vector2(rb.velocity.x, jump * 0.3f); //when doubleJump is true P1 will jump again & set at 40% of the first jump
-            doubleJump = false; //after the second jump the doubleJump will be false 
+           /* doubleJump = false;*/ //after the second jump the doubleJump will be false 
         }
     }
 

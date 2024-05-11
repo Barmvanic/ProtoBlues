@@ -2435,7 +2435,7 @@ Transform:
   m_GameObject: {fileID: 341116981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9432783, y: 3.0611267, z: -9.871285}
+  m_LocalPosition: {x: -5.634357, y: 3.0611267, z: -9.871285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4016,7 +4016,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 493123398}
-  - component: {fileID: 493123396}
   - component: {fileID: 493123399}
   m_Layer: 0
   m_Name: Pieds
@@ -4025,19 +4024,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &493123396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493123395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a46ec2a43584064e8de51244ea0ae7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isJumping: 0
 --- !u!4 &493123398
 Transform:
   m_ObjectHideFlags: 0
@@ -5172,8 +5158,8 @@ PolygonCollider2D:
     - - {x: -1.1640205, y: 1.6606603}
       - {x: -1.2027369, y: 0.40339687}
       - {x: -1.091146, y: -8.988618}
-      - {x: 3.307726, y: -8.94697}
-      - {x: 3.3920631, y: -3.3852978}
+      - {x: 18.067198, y: -8.768848}
+      - {x: 18.038857, y: 1.7623243}
       - {x: 3.3160572, y: 1.6890397}
   m_UseDelaunayMesh: 0
 --- !u!1 &613854108
@@ -5809,6 +5795,7 @@ GameObject:
   - component: {fileID: 735862473}
   - component: {fileID: 735862476}
   - component: {fileID: 735862477}
+  - component: {fileID: 735862478}
   m_Layer: 0
   m_Name: P1
   m_TagString: Player
@@ -5896,7 +5883,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.7
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -5924,9 +5911,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  jump: 18
+  jump: 15
+  jumpVelocity: 1.8
   rb: {fileID: 735862473}
-  Pieds: {fileID: 493123396}
 --- !u!61 &735862476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5984,6 +5971,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d6297ab75162449752af22a92451b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &735862478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735862469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240acbc969392f94392d7b74baa8d0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMutiplier: 2.5
+  lowJumpMutiplier: 2
+  rb: {fileID: 0}
 --- !u!1 &747142530
 GameObject:
   m_ObjectHideFlags: 0
@@ -9144,7 +9146,7 @@ Transform:
   m_GameObject: {fileID: 1056565806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.9432783, y: 3.0611267, z: -9.871285}
+  m_LocalPosition: {x: -5.634357, y: 3.0611267, z: -9.871285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
