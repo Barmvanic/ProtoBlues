@@ -2435,7 +2435,7 @@ Transform:
   m_GameObject: {fileID: 341116981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.634357, y: 3.0611267, z: -9.871285}
+  m_LocalPosition: {x: -5.198357, y: 3.1601272, z: -9.973286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3527,7 +3527,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.012494424}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3538,7 +3538,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.71, y: 0.16}
+  m_Size: {x: 1.71, y: 0.13501103}
   m_EdgeRadius: 0
 --- !u!212 &430917638
 SpriteRenderer:
@@ -4023,7 +4023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &493123398
 Transform:
   m_ObjectHideFlags: 0
@@ -5850,7 +5850,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.47, y: 0.99}
+  m_Size: {x: 1, y: 2.106383}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5865,7 +5865,7 @@ Transform:
   m_GameObject: {fileID: 735862469}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.223, y: 3.008, z: 3.77}
+  m_LocalPosition: {x: -5.787, y: 3.107, z: 3.668}
   m_LocalScale: {x: 0.75251, y: 0.75251, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5947,18 +5947,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0012915134, y: 0.12274438}
+  m_Offset: {x: -0.12912756, y: -0.05398339}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.47, y: 0.99}
-    newSize: {x: 0.47, y: 0.99}
+    newSize: {x: 1, y: 2.106383}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48808813, y: 0.7651839}
+  m_Size: {x: 0.68261445, y: 1.1186396}
   m_EdgeRadius: 0
 --- !u!114 &735862477
 MonoBehaviour:
@@ -9168,7 +9168,7 @@ Transform:
   m_GameObject: {fileID: 1056565806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.634357, y: 3.0611267, z: -9.871285}
+  m_LocalPosition: {x: -5.198357, y: 3.1601272, z: -9.973286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15389,8 +15389,6 @@ GameObject:
   - component: {fileID: 1884917220}
   - component: {fileID: 1884917222}
   - component: {fileID: 1884917221}
-  - component: {fileID: 1884917224}
-  - component: {fileID: 1884917223}
   m_Layer: 0
   m_Name: Interaction assets_3
   m_TagString: Floor
@@ -15443,7 +15441,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.004709989}
   m_SpriteTilingProperty:
@@ -15510,38 +15508,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!251 &1884917223
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884917219}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
---- !u!114 &1884917224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884917219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f4d749f47cb98428a65cd57712e465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.5
 --- !u!1 &1885267776
 GameObject:
   m_ObjectHideFlags: 0
