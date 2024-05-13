@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f180a1d4663428644b6d4655d99bef12
+guid: e13f5ea4d54b7334fb77946ddab86f6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,18 +121,106 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Triangles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 145
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8a28cf12a47ac42b25c4f734606569
+      internalID: -1571077321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangles_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 32
+        width: 156
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411cf87bec9186c40b33dc267cdaf9a0
+      internalID: 1673269645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangles_2
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 103
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c4ae971559f3f4087dd27df6ae486c
+      internalID: -1341570872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangles_3
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 62
+        width: 122
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda32b8561cc02e40a19e6f97ca3f0d2
+      internalID: 665805472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 43a25105008178a4a8e6638ea3754622
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Triangles_0: -1571077321
+      Triangles_1: 1673269645
+      Triangles_2: -1341570872
+      Triangles_3: 665805472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
