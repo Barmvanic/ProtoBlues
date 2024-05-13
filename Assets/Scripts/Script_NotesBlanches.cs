@@ -32,8 +32,10 @@ public class Script_NotesBlanches : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             gameObject.GetComponent<Collider2D>().enabled = false;
-            moveNote = true; 
+            moveNote = true;
             //Destroy(gameObject, 2f); 
+
+            Debug.Log ("touché"); 
         }
     }
 }
