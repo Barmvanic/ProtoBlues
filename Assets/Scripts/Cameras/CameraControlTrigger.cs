@@ -7,7 +7,48 @@ using UnityEditor;
 public class CameraControlTrigger : MonoBehaviour
 {
     public CustomInspectorObjects customInspectorObjects;
+
+    private Collider2D _coll;
+
+    private void Start()
+    {
+        _coll = GetComponent<Collider2D>();
+        customInspectorObjects = new CustomInspectorObjects(); 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (customInspectorObjects.panCameraOnContact)
+            {
+                // pan the camera
+                CameraManager.instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime, customInspectorObjects.panDirection, false);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+
+            Vector2 exitDirection = (collision.transform.position - _coll.bounds.center).normalized;
+
+            if (customInspectorObjects.swapCameras && customInspectorObjects.cameraOnLeft != null && customInspectorObjects.cameraOnRight != null)
+            {
+                //swap cameras 
+                CameraManager.instance.SwapCamera(customInspectorObjects.cameraOnLeft, customInspectorObjects.cameraOnRight, exitDirection);
+            }
+            if (customInspectorObjects.panCameraOnContact)
+            {
+                // pan the camera
+                CameraManager.instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime, customInspectorObjects.panDirection, true);
+            }
+        }
+    }
 }
+
 
 [System.Serializable]
 public class CustomInspectorObjects
