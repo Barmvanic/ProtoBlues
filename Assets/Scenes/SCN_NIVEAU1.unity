@@ -3616,8 +3616,8 @@ Camera:
   near clip plane: 0.01
   far clip plane: 999.44
   field of view: 23.03
-  orthographic: 0
-  orthographic size: 1.72
+  orthographic: 1
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3641,12 +3641,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341116981}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.432666, y: 3.1601272, z: -9.973286}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.263632, y: 3.8719983, z: -9.973286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1514518561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &341116985
 MonoBehaviour:
@@ -3707,7 +3707,7 @@ MonoBehaviour:
   m_ShowDebugText: 0
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 341116984}
+  m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
@@ -11778,7 +11778,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1056565807}
   - component: {fileID: 1056565808}
-  - component: {fileID: 1056565809}
   m_Layer: 0
   m_Name: Cam P1
   m_TagString: Untagged
@@ -11795,7 +11794,7 @@ Transform:
   m_GameObject: {fileID: 1056565806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.432666, y: 3.1601272, z: -9.973286}
+  m_LocalPosition: {x: -8.263632, y: 3.8719983, z: -9.973286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11818,13 +11817,13 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 200
+  m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 735862471}
   m_Lens:
     FieldOfView: 23.03
-    OrthographicSize: 1.72
+    OrthographicSize: 8
     NearClipPlane: 0.01
     FarClipPlane: 999.44
     Dutch: 0
@@ -11841,23 +11840,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1201683732}
---- !u!114 &1056565809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056565806}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ConfineMode: 0
-  m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
-  m_ConfineScreenEdges: 1
-  m_Damping: 2.3
 --- !u!1 &1059909072
 GameObject:
   m_ObjectHideFlags: 0
@@ -13155,22 +13137,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0.55
-  m_LookaheadSmoothing: 5.4
+  m_LookaheadTime: 0.05
+  m_LookaheadSmoothing: 1
   m_LookaheadIgnoreY: 0
-  m_XDamping: 4
-  m_YDamping: 5
-  m_ZDamping: 1
+  m_XDamping: 0.75
+  m_YDamping: 2
+  m_ZDamping: 0
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.10931557
-  m_ScreenY: 0.3252862
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0.34103817
+  m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 1.1312284
-  m_SoftZoneHeight: 1.1146067
+  m_SoftZoneWidth: 0.2
+  m_SoftZoneHeight: 0.35
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -16516,6 +16498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514518561}
+  - component: {fileID: 1514518562}
   m_Layer: 0
   m_Name: ==== CAMERAS ====
   m_TagString: Untagged
@@ -16536,11 +16519,29 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 341116984}
   - {fileID: 1056565807}
   - {fileID: 2078494262}
   - {fileID: 904992781}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514518562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514518560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dad7847c27fe7498717368f73dc73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allVirtualCameras:
+  - {fileID: 1056565808}
+  _fallPanAmount: 0.25
+  _fallYPanTime: 0.5
+  _fallSpeddYDamplingChangeTreshold: -15
 --- !u!1 &1520317779
 GameObject:
   m_ObjectHideFlags: 0
@@ -22157,7 +22158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2078494261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23283,7 +23284,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 341116984}
   - {fileID: 751103608}
   - {fileID: 488608286}
   - {fileID: 1514518561}
