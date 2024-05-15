@@ -20,10 +20,12 @@ public class CameraControlTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("triggered");
             if (customInspectorObjects.panCameraOnContact)
             {
                 // pan the camera
                 CameraManager.instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime,customInspectorObjects.panDirection, false);
+                Debug.Log("pan cam enter");
             }
         }
     }
@@ -32,18 +34,23 @@ public class CameraControlTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("exited");
 
             Vector2 exitDirection = (collision.transform.position - _coll.bounds.center).normalized;
+
+            Debug.Log(exitDirection);
 
             if (customInspectorObjects.swapCameras && customInspectorObjects.cameraOnLeft != null && customInspectorObjects.cameraOnRight != null)
             {
                 //swap cameras 
                 CameraManager.instance.SwapCamera(customInspectorObjects.cameraOnLeft, customInspectorObjects.cameraOnRight, exitDirection);
+                Debug.Log("swap cam");
             }
             if (customInspectorObjects.panCameraOnContact)
             {
                 // pan the camera
                 CameraManager.instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime, customInspectorObjects.panDirection, true);
+                Debug.Log("pan cam exit");
             }
         }
     }

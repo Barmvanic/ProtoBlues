@@ -20,7 +20,7 @@ public class CameraManager : MonoBehaviour
     private Coroutine _lerpYPanCoroutine;
     private Coroutine _panCameraCoroutine; 
 
-    private CinemachineVirtualCamera _currentCamera;
+    [SerializeField] private CinemachineVirtualCamera _currentCamera;
     private CinemachineFramingTransposer _framingTransposer;
 
     private float _normYPanAmount; 
@@ -34,12 +34,14 @@ public class CameraManager : MonoBehaviour
             instance = this;
         }
 
+        // set the current active camera
+        _currentCamera = _allVirtualCameras[0];
+
         for (int i =0;  i < _allVirtualCameras.Length; i++)
         {
             if (_allVirtualCameras[i].enabled)
             {
-                // set the current active camera
-                _currentCamera = _allVirtualCameras[i]; 
+                
 
                 // set the framing transposer 
                 _framingTransposer = _currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
@@ -188,7 +190,7 @@ public class CameraManager : MonoBehaviour
 
         // if the current camera is the camera on the right and our trigger exit direction was on the left
 
-        else if(_currentCamera == cameraFromRight && triggerExitDirection.x > 0f)
+        else if(_currentCamera == cameraFromRight && triggerExitDirection.x < 0f)
         {
             // activate the new camera 
             cameraFromLeft.enabled = true;
