@@ -11,6 +11,7 @@ public class CheckpointSystem : MonoBehaviour
     public void CheckpointFeedback()
     {
         CheckpointCollider.enabled = false;
-        FlagRenderer.color = GreenFlag;
+        FlagRenderer.color = new Color(134, 255, 0, 255);
+        Debug.Log("vefjefie");
     }
 }

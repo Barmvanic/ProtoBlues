@@ -110,7 +110,9 @@ public class MovementPlayer : MonoBehaviour
 
             Checkpoint(CurrentCheckpoint);
 
-            collision.GetComponent<CheckpointSystem>().CheckpointFeedback(); 
+            collision.GetComponent<CheckpointSystem>().CheckpointFeedback();
+
+            Debug.Log("collidedDEAD");
 
         }
     }
