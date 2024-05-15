@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - OneWayPlatform
   - PlatformMovement
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

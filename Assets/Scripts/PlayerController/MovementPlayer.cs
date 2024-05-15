@@ -19,15 +19,21 @@ public class MovementPlayer : MonoBehaviour
     //bool doubleJump;
     bool facingRight = true;
 
-    private float _fallSpeedYDampingChangeThreshold; 
+    //CAMERA
+    private float _fallSpeedYDampingChangeThreshold;
 
+    //CHECKPOINT
+    private Transform LastCheckpoint = null;
     
-  
+
+
+
 
 
     void Start()
     {
         Movement();
+
         rb = GetComponent<Rigidbody2D>();
 
         _fallSpeedYDampingChangeThreshold = CameraManager.instance._fallSpeddYDamplingChangeTreshold; 
@@ -96,6 +102,23 @@ public class MovementPlayer : MonoBehaviour
 
     }
 
-  
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       if (collision.CompareTag("Checkpoint"))
+        {
+            Transform CurrentCheckpoint = collision.gameObject.transform;
+
+            Checkpoint(CurrentCheckpoint);
+
+            collision.GetComponent<CheckpointSystem>().CheckpointFeedback(); 
+
+        }
+    }
+
+    private void Checkpoint(Transform checkpointTransform)
+    {
+        LastCheckpoint = checkpointTransform; 
+    }
+
 
 }
