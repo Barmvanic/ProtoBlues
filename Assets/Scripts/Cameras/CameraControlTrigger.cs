@@ -23,7 +23,7 @@ public class CameraControlTrigger : MonoBehaviour
             if (customInspectorObjects.panCameraOnContact)
             {
                 // pan the camera
-                CameraManager.instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime, customInspectorObjects.panDirection, false);
+                CameraManager.instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime,customInspectorObjects.panDirection, false);
             }
         }
     }
