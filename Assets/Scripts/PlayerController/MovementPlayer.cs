@@ -56,9 +56,9 @@ public class MovementPlayer : MonoBehaviour
         }
 
         // if we are falling past a certain speed threshold 
-        if(rb.velocity.y <_fallSpeedYDampingChangeThreshold && !CameraManager.instance.IsLerpingYDamping && !CameraManager.instance.LerpedFromPlayerFalling)
+        if (rb.velocity.y < _fallSpeedYDampingChangeThreshold && !CameraManager.instance.IsLerpingYDamping && !CameraManager.instance.LerpedFromPlayerFalling)
         {
-            CameraManager.instance.LerpYDamping(true); 
+            CameraManager.instance.LerpYDamping(true);
         }
         // if we are standing still or moving up 
         if (rb.velocity.y >= 0f && !CameraManager.instance.IsLerpingYDamping && CameraManager.instance.LerpedFromPlayerFalling)

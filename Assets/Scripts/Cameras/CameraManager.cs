@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
-using Cinemachine; 
+using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class CameraManager : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class CameraManager : MonoBehaviour
     private Coroutine _lerpYPanCoroutine;
     private Coroutine _panCameraCoroutine; 
 
-    [SerializeField] private CinemachineVirtualCamera _currentCamera;
+    private CinemachineVirtualCamera _currentCamera;
     private CinemachineFramingTransposer _framingTransposer;
 
     private float _normYPanAmount; 
@@ -29,7 +31,7 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -124,10 +126,10 @@ public class CameraManager : MonoBehaviour
                     endPos = Vector2.down;
                     break;
                 case PanDirection.Left:
-                    endPos = Vector2.left;
+                    endPos = Vector2.right;
                     break;
                 case PanDirection.Right:
-                    endPos = Vector2.right;
+                    endPos = Vector2.left;
                     break;
                 default:
                     break; 
