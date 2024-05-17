@@ -19,9 +19,6 @@ public class MovementPlayer : MonoBehaviour
     //bool doubleJump;
     bool facingRight = true;
 
-    //CAMERA
-    private float _fallSpeedYDampingChangeThreshold;
-
     //CHECKPOINT
     private Transform LastCheckpoint = null;
     
@@ -35,8 +32,6 @@ public class MovementPlayer : MonoBehaviour
         Movement();
 
         rb = GetComponent<Rigidbody2D>();
-
-        _fallSpeedYDampingChangeThreshold = CameraManager.instance._fallSpeddYDamplingChangeTreshold; 
 
 
     }
@@ -53,21 +48,6 @@ public class MovementPlayer : MonoBehaviour
         if (Input.GetAxis("Horizontal") < 0 && facingRight)
         {
             Flip(); 
-        }
-
-        // if we are falling past a certain speed threshold 
-        if (rb.velocity.y < _fallSpeedYDampingChangeThreshold && !CameraManager.instance.IsLerpingYDamping && !CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpYDamping(true);
-        }
-        // if we are standing still or moving up 
-        if (rb.velocity.y >= 0f && !CameraManager.instance.IsLerpingYDamping && CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            //reset so it can be called again 
-
-            CameraManager.instance.LerpedFromPlayerFalling = false;
-
-            CameraManager.instance.LerpYDamping(false);
         }
 
     }

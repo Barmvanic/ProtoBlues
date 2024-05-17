@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Jobs.LowLevel.Unsafe;
@@ -6,7 +5,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
 
-public class Trigger : MonoBehaviour
+public class CameraCinemachine : MonoBehaviour
 {
     [SerializeField] Camera[] cameras;
     private int currentCameraIndex;
