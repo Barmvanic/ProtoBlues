@@ -756,10 +756,10 @@ TextureImporter:
       name: CERCLES_LVL2_30
       rect:
         serializedVersion: 2
-        x: 1592
-        y: 649
-        width: 97
-        height: 159
+        x: 1575
+        y: 632
+        width: 146
+        height: 179
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
