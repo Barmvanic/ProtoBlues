@@ -16,7 +16,7 @@ public class Script_QTESys : MonoBehaviour
     public static int successfulQTECount = 0;
     
 
-    private void Update()
+    void Update()
     {
         if (waitingForKey == 0)
         {

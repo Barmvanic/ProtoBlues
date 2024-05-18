@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,11 +6,8 @@ using UnityEngine.UI;
 public class ChangeSceneQTE : MonoBehaviour
 {
     public static int noteCount = 0;
-
     public Text messageText;
-
-    public static int successfulQTECount = 0; 
-
+    public static int successfulQTECount = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,26 +18,27 @@ public class ChangeSceneQTE : MonoBehaviour
         {
             noteCount++;
 
-            // if P1 have the 4 notes 
+            // Check if player has collected the required number of notes
             if (noteCount >= 4)
             {
+                // Load the next scene
                 SceneManager.LoadScene("SCN_NIV3");
             }
             else
             {
-                // show the text in UI
+                // Show the message in the UI
                 messageText.text = "You don't have all the notes, Andy.";
                 StartCoroutine(ClearMessage());
             }
-
         }
-
-
     }
 
-    IEnumerator ClearMessage()
+    private IEnumerator ClearMessage()
     {
-        yield return new WaitForSeconds(3f); // Wait for 3 seconds
-        messageText.text = ""; // Dissapear 
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(2f);
+        // Clear the message text
+        messageText.text = "";
     }
 }
+
