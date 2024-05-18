@@ -35,7 +35,12 @@ public class Script_NotesBlanches : MonoBehaviour
             moveNote = true;
             //Destroy(gameObject, 2f); 
 
-            Debug.Log ("touché"); 
+            // Incrémente la variable noteCount dans le script ChangeSceneQTE
+            ChangeSceneQTE.noteCount++;
+
+            Debug.Log("Note collected");
+
+            
         }
     }
 }

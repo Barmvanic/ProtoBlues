@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Script_QTESys : MonoBehaviour
@@ -8,32 +9,35 @@ public class Script_QTESys : MonoBehaviour
     public GameObject DisplayBox;
     public GameObject PassBox;
     public int QTEGen;
-    public int WaitingForKey;
-    public int CorrectKey;
-    public int CountingDown; 
+    public int waitingForKey;
+    public int correctKey;
+    public int countingDown;
 
-    void Update()
+    public static int successfulQTECount = 0;
+    
+
+    private void Update()
     {
-        if (WaitingForKey == 0)
+        if (waitingForKey == 0)
         {
-            QTEGen = Random.Range(1, 4);
-            CountingDown = 1;
+            QTEGen = Random.Range(1,4);
+            countingDown = 1;
             StartCoroutine (CountDown ()); 
 
             if (QTEGen == 1) 
             {
-                WaitingForKey = 1;
-                DisplayBox.GetComponent<Text>().text = "[E]"; 
+                waitingForKey = 1;
+                DisplayBox.GetComponent<Text>().text = "[X]"; 
             }
             if (QTEGen == 2)
             {
-                WaitingForKey = 1;
-                DisplayBox.GetComponent<Text>().text = "[R]";
+                waitingForKey = 1;
+                DisplayBox.GetComponent<Text>().text = "[Y]";
             }
             if (QTEGen == 3)
             {
-                WaitingForKey = 1;
-                DisplayBox.GetComponent<Text>().text = "[T]";
+                waitingForKey = 1;
+                DisplayBox.GetComponent<Text>().text = "[B]";
             }
         }
 
@@ -41,16 +45,17 @@ public class Script_QTESys : MonoBehaviour
         {
             if (Input.anyKeyDown) // check if the user press the correct key
             {
-                if (Input.GetButtonDown("EKey"))
+                if (Input.GetButtonDown("XKey"))
                 {
-                    CorrectKey = 1;
-                    StartCoroutine (KeyPressing ());
-                    Debug.Log(" E presse");
+                    correctKey = 1;
+                    StartCoroutine(KeyPressing(true)); 
+                    Debug.Log(" X presse");
                 }
                 else
                 {
-                    CorrectKey = 2;
-                    StartCoroutine (KeyPressing ());
+                    StartCoroutine(KeyPressing(false));
+                    correctKey = 2;
+                    StartCoroutine (KeyPressing2 ());
                 }
                 
             }
@@ -60,16 +65,17 @@ public class Script_QTESys : MonoBehaviour
         {
             if (Input.anyKeyDown) // check if the user press the correct key
             {
-                if (Input.GetButtonDown("RKey"))
+                if (Input.GetButtonDown("YKey"))
                 {
-                    CorrectKey = 1;
-                    StartCoroutine (KeyPressing ());
-                    Debug.Log(" R presse");
+                    correctKey = 1;
+                    StartCoroutine(KeyPressing(true));
+                    Debug.Log(" Y presse");
                 }
                 else
                 {
-                    CorrectKey = 2;
-                    StartCoroutine (KeyPressing ());
+                    StartCoroutine(KeyPressing(false));
+                    correctKey = 2;
+                    StartCoroutine (KeyPressing2 ());
                 }
                 
             }
@@ -79,67 +85,92 @@ public class Script_QTESys : MonoBehaviour
         {
             if (Input.anyKeyDown) // check if the user press the correct key
             {
-                if (Input.GetButtonDown("TKey"))
+                if (Input.GetButtonDown("BKey"))
                 {
-                    CorrectKey = 1;
-                    StartCoroutine (KeyPressing ());
-                    Debug.Log(" R presse");
+                    correctKey = 1;
+                    StartCoroutine(KeyPressing(true));
+                    Debug.Log(" presse");
                 }
                 else
                 {
-                    CorrectKey = 2;
-                    StartCoroutine (KeyPressing ());
+                    StartCoroutine(KeyPressing(false));
+                    correctKey = 2;
+                    StartCoroutine (KeyPressing2 ());
                 }
                 
             }
         }
+
+
     }
 
-    IEnumerator KeyPressing() // when it comes to 0, it's generates a new one 
-    {
-        QTEGen = 4; 
-        if (CorrectKey == 1)
-        {
-            CountingDown = 2;
-            PassBox.GetComponent<Text>().text = "PASS!"; 
-            yield return new WaitForSeconds (1.5f);
-            CorrectKey = 0;
-            PassBox.GetComponent<Text>().text = "";
-            DisplayBox.GetComponent<Text>().text = "";
-            yield return new WaitForSeconds(1.5f);
-            WaitingForKey = 0;
-            CountingDown = 1; 
-        }
 
-        if (CorrectKey == 2)
+    IEnumerator KeyPressing(bool success) // when it comes to 0, it's generates a new one 
+    {
+        QTEGen = 4;
+        if (correctKey == 1)
         {
-            CountingDown = 2;
-            PassBox.GetComponent<Text>().text = "FAIL!";
+            countingDown = 2;
+            PassBox.GetComponent<Text>().text = "PASS!";
             yield return new WaitForSeconds(1.5f);
-            CorrectKey = 0;
+            correctKey = 0;
             PassBox.GetComponent<Text>().text = "";
             DisplayBox.GetComponent<Text>().text = "";
             yield return new WaitForSeconds(1.5f);
-            WaitingForKey = 0;
-            CountingDown = 1;
+            waitingForKey = 0;
+            countingDown = 1;
+
+            if (success)
+            {
+                successfulQTECount++;
+                if (successfulQTECount >= 4)
+                {
+                    Debug.Log("4 successful QTEs reached. Stopping QTE system.");
+                    enabled = false; // Disable this script to stop QTE system
+                }
+            }
+
+            ExitQTE.successfulQTECount++;
         }
+    }
+    
+    
+    IEnumerator KeyPressing2()
+    {
+        QTEGen = 4;
+        if (correctKey == 2)
+        {
+          countingDown = 2;
+          PassBox.GetComponent<Text>().text = "FAIL!";
+          yield return new WaitForSeconds(1.5f);
+          correctKey = 0;
+          PassBox.GetComponent<Text>().text = "";
+          DisplayBox.GetComponent<Text>().text = "";
+          yield return new WaitForSeconds(1.5f);
+          waitingForKey = 0;
+          countingDown = 1;
+          Debug.Log(" WTF");
+        }
+        
+       
     }
     
     IEnumerator CountDown() // waiting for a couple seconds to reset everything 
     {
         yield return new WaitForSeconds(3.56f); 
-        if (CountingDown == 1)
+        if (countingDown == 1)
         {
             QTEGen = 4;
-            CountingDown = 2;
+            countingDown = 2;
             PassBox.GetComponent<Text>().text = "FAIL!";
             yield return new WaitForSeconds(1.5f);
-            CorrectKey = 0;
+            correctKey = 0;
             PassBox.GetComponent<Text>().text = "";
             DisplayBox.GetComponent<Text>().text = "";
             yield return new WaitForSeconds(1.5f);
-            WaitingForKey = 0;
-            CountingDown = 1;
+            waitingForKey = 0;
+            countingDown = 1;
+            Debug.Log("failure");
         }
     }
 }
