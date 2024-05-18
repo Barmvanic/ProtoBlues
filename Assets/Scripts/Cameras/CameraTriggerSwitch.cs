@@ -9,8 +9,15 @@ public class CameraTriggerSwitch : MonoBehaviour
     private int defaultPriority = 10;
     private int activeCameraIndex = 0; // keeps track of wich camera is currently active 
 
+    private Collider2D _coll;
+
+    [SerializeField] public bool yExitDirection;
+    [SerializeField] public bool xExitDirection;
+
     void Start()
     {
+        _coll = GetComponent<Collider2D>();
+
         // Initialize all cameras with default priority
         foreach (var cam in virtualCameras)
         {
@@ -28,7 +35,43 @@ public class CameraTriggerSwitch : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SwitchCamera();
+            
+            if (virtualCameras[0].Priority == defaultPriority + 1)
+                SwitchCamera();
+            
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Vector2 exitDirection = (other.transform.position - _coll.bounds.center).normalized;
+
+            if (yExitDirection == false) // If horizontal
+            {
+                if (xExitDirection == false && exitDirection.x < 0) // right
+                {
+                    SwitchCamera();
+                }
+                else if (xExitDirection == true && exitDirection.x > 0) // left
+                {
+                    SwitchCamera();
+                }
+            }
+
+            if (yExitDirection == true) // If vertical
+            {
+                if (xExitDirection == false && exitDirection.y > 0) // up
+                {
+                    SwitchCamera();
+                }
+                else if (xExitDirection == true && exitDirection.y < 0) //down
+                {
+                    SwitchCamera();
+                }
+            }
         }
     }
 

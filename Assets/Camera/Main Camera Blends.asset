@@ -13,72 +13,14 @@ MonoBehaviour:
   m_Name: Main Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: 1CenterPlayerFollowCAM
-    m_To: 2CenterPlayerFollowCAM
+  - m_From: 1_CenterPlayerFollowCAM
+    m_To: 2_CenterPlayerFollowCAM
     m_Blend:
       m_Style: 1
-      m_Time: 1
+      m_Time: 2
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 0
         m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: 2CenterPlayerFollowCAM
-    m_To: 1CenterPlayerFollowCAM
-    m_Blend:
-      m_Style: 1
-      m_Time: 0.5
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: -0.008852866
-          outSlope: -0.008852866
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 1
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 15.532551
-          outSlope: 15.532551
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.022425652
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 0
-  - m_From: 1CenterPlayerFollowCAM
-    m_To: 1CenterPlayerFollowCAM (1)
-    m_Blend:
-      m_Style: 4
-      m_Time: 0.2
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: -0.008852866
-          outSlope: -0.008852866
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 1
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 15.532551
-          outSlope: 15.532551
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.022425652
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
         m_RotationOrder: 0
