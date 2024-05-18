@@ -905,7 +905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &948725528
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2010,6 +2010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1942501422}
   - component: {fileID: 1942501421}
+  - component: {fileID: 1942501423}
   m_Layer: 0
   m_Name: QTE_System
   m_TagString: Untagged
@@ -2024,7 +2025,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942501420}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8205ffe37b4c6a548a21ed62f1123a78, type: 3}
   m_Name: 
@@ -2050,6 +2051,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942501423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942501420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8c8c94bdcbe0040a1fea6ceab9c7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteCount: 6
+  requiredSucess: 4
+  success: 0
+  QTEGen: 000000000000
+  cooldownBetween: 2
+  timerPress: 3
+  DisplayBox: {fileID: 1797748033}
+  PassBox: {fileID: 353472741}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
