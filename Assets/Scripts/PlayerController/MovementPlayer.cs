@@ -14,15 +14,17 @@ public class MovementPlayer : MonoBehaviour
     private float Move;
 
     public Rigidbody2D rb;
+    Animator animator; 
 
     //[SerializeField] Double_Jump Pieds;
     //bool doubleJump;
     bool facingRight = true;
+    bool isGrounded = false; 
 
     //CHECKPOINT
     private Transform LastCheckpoint = null;
     
-
+    
 
 
 
@@ -32,6 +34,7 @@ public class MovementPlayer : MonoBehaviour
         Movement();
 
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
 
     }
@@ -50,6 +53,8 @@ public class MovementPlayer : MonoBehaviour
             Flip(); 
         }
 
+        
+
     }
 
     void Movement ()
@@ -59,11 +64,18 @@ public class MovementPlayer : MonoBehaviour
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
 
 
-        if (Input.GetButtonDown("Jump") /*&& !Pieds.isJumping*/) //p1 in the air whit the jump then the function will not work
+        if (animator != null)
+        {
+            animator.SetBool("isWalking", Mathf.Abs(Move) > 0.01f);
+        }
+
+
+        if (Input.GetButtonDown("Jump") && isGrounded /*&& !Pieds.isJumping*/) //p1 in the air whit the jump then the function will not work
         {
             rb.AddForce(new Vector2(rb.velocity.x, jump * 10));
            /* doubleJump = true;*/ //p1 jump while on the floor, double jump will be true 
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity; 
+            GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
+            isGrounded = false;
         }
         else if (Input.GetButtonDown("Jump") /*&& doubleJump*/)
         {

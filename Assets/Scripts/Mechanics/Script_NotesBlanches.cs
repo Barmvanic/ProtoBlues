@@ -37,7 +37,7 @@ public class Script_NotesBlanches : MonoBehaviour
             //Destroy(gameObject, 2f); 
 
             // Incrémente la variable noteCount dans le script ChangeSceneQTE
-            ChangeSceneQTE.noteCount++;
+            GameManager.Instance.noteCount++;
 
             Debug.Log("Note collected");
 

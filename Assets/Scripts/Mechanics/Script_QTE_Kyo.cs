@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class Script_QTE_Kyo : MonoBehaviour
 {
     // REQUIREMENTS
-    //public static int noteCount; // number of notes collected = number of trials
-    [SerializeField] int noteCount = 6; // static doesn' work??
+    public static GameManager instance; // for notecount
+    [SerializeField] private int notereset = 0;
     [SerializeField] private int requiredSucess = 4; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     private int trials = 0;
@@ -52,7 +52,7 @@ public class Script_QTE_Kyo : MonoBehaviour
     {
         if (started)
         {
-            if (success < requiredSucess && trials < noteCount) // if not win yet and not loose yet
+            if (success < requiredSucess && trials < GameManager.Instance.noteCount) // if not win yet and not loose yet
             {
                 QTEPlay();
             }
@@ -157,8 +157,11 @@ public class Script_QTE_Kyo : MonoBehaviour
             yield return new WaitForSeconds(cooldownBetween);
             DisplayBox.GetComponent<Text>().text = "";
 
+            // count note reset
+            GameManager.Instance.noteCount = notereset;
+
             // return to main menu?
-            SceneManager.LoadScene("SCN_Main_Menu");
+            SceneManager.LoadScene("SCN_NIVEAU1");
         }
     }
 }

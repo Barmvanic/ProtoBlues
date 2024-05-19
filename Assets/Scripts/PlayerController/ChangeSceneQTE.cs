@@ -5,23 +5,16 @@ using UnityEngine.UI;
 
 public class ChangeSceneQTE : MonoBehaviour
 {
-    public static int noteCount = 0;
     public Text messageText;
-    public static int successfulQTECount = 0;
+    public int requiredNoteCount = 4;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Return the current Active Scene in order to get the current Scene name.
-        Scene scene = SceneManager.GetActiveScene();
-
         if (collision.CompareTag("Player"))
         {
-            noteCount++;
-
-            // Check if player has collected the required number of notes
-            if (noteCount >= 4)
+            if (GameManager.Instance.noteCount >= requiredNoteCount)
             {
-                // Load the next scene
+                // Load the next scene if the player has collected the required number of notes
                 SceneManager.LoadScene("SCN_NIV3");
             }
             else
@@ -41,4 +34,5 @@ public class ChangeSceneQTE : MonoBehaviour
         messageText.text = "";
     }
 }
+
 
