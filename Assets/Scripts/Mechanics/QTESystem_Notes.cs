@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class QTEItem // permits to set up the key with the image 
@@ -21,7 +22,13 @@ public class QTESystem_Notes : MonoBehaviour
 
     // QTE GEN
     [SerializeField] private QTEItem[] QTEGen; // Array of QTE items
-    private int i; // random QTE
+    private int currentQTEIndex = 0; // current QTE index
+
+    // Define a sequence for QTE appearance order
+    [SerializeField] private int[] QTEOrder; // Array to define the order of QTEs
+
+    // Store player inputs for validation
+    private List<string> playerSequence = new List<string>();
 
     // TIMERS
     [SerializeField] private float cooldownBetween = 2.5f; // cooldown result
@@ -32,7 +39,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     // UI
     public GameObject PassBox;
-    public TextMeshProUGUI trialsText; 
+    public TextMeshProUGUI trialsText;
 
     // QTE POSITIONS
     public Transform[] QTEPositions; // positions for QTE appearance
@@ -41,7 +48,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     void Start()
     {
-        UpdateTrialsUI();
+        //UpdateTrialsUI();
         waitingForKey = true;
         timer = timerPress; // reset timer
 
@@ -58,38 +65,52 @@ public class QTESystem_Notes : MonoBehaviour
             {
                 QTEPlay();
             }
-            else StartCoroutine(Results());
+            else
+            {
+                if (IsSequenceCorrect())
+                {
+                    StartCoroutine(Results(true)); // Player wins
+                }
+                else
+                {
+                    StartCoroutine(Results(false)); // Player loses
+                }
+            }
         }
 
         Timer(); // start timer for pressing
     }
 
+    //void UpdateTrialsUI() // update the number of trials 
+    //{
+    //    if (trialsText != null)
+    //    {
+    //        trialsText.text = "Trials :" + trials.ToString() + "/4";
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Trials Text UI component is not assigned in the inspector.");
+    //    }
+    //}
 
-    void UpdateTrialsUI() // update the number of trials 
-    {
-        if (trialsText != null)
-        {
-            trialsText.text = "Trials :" + trials.ToString() + "/4";
-        }    
-        else
-        {
-            Debug.LogError("Trials Text UI component is not assigned in the inspector.");
-        }
-            
-    }
     void QTEPlay()
     {
         if (waitingForKey) // gen key
         {
-
-            if (QTEGen.Length == 0 || QTEPositions.Length == 0)
+            if (QTEGen.Length == 0 || QTEPositions.Length == 0 || QTEOrder.Length == 0)
             {
-                Debug.LogError("QTEGen or QTEPositions array is empty. Please populate them in the inspector.");
+                Debug.LogError("QTEGen, QTEPositions or QTEOrder array is empty. Please populate them in the inspector.");
                 return;
             }
-            i = Random.Range(0, QTEGen.Length); // generate random number for QTEGen
-            int positionIndex = Random.Range(0, QTEPositions.Length); // get a random position 
 
+            if (currentQTEIndex >= QTEOrder.Length)
+            {
+                Debug.LogError("QTEOrder array index is out of bounds.");
+                return;
+            }
+
+            int qteIndex = QTEOrder[currentQTEIndex]; // Get QTE index from the order array
+            int positionIndex = currentQTEIndex % QTEPositions.Length; // Cycle through positions
 
             if (currentQTE != null)
             {
@@ -97,7 +118,7 @@ public class QTESystem_Notes : MonoBehaviour
                 Destroy(currentQTE, cooldownBetween); // Destroy after cooldown
             }
 
-            currentQTE = Instantiate(QTEGen[i].qteObject, QTEPositions[positionIndex].position, Quaternion.identity); // instantiate QTE GameObject at random position
+            currentQTE = Instantiate(QTEGen[qteIndex].qteObject, QTEPositions[positionIndex].position, Quaternion.identity); // instantiate QTE GameObject at ordered position
             SetAlpha(currentQTE, 1); // Show new QTE GameObject
 
             waitingForKey = false;
@@ -107,8 +128,9 @@ public class QTESystem_Notes : MonoBehaviour
         {
             if (Input.anyKeyDown) // if key pressed
             {
-                if (Input.GetButtonDown(QTEGen[i].key)) // check if the correct key is pressed
+                if (Input.GetButtonDown(QTEGen[QTEOrder[currentQTEIndex]].key)) // check if the correct key is pressed
                 {
+                    playerSequence.Add(QTEGen[QTEOrder[currentQTEIndex]].key); // Add key to player sequence
                     StartCoroutine(Next(true)); // if good key
                 }
                 else
@@ -146,18 +168,20 @@ public class QTESystem_Notes : MonoBehaviour
     {
         timer = cooldownBetween * 2; // just to be sure timer does not go down to 0 when displaying result
 
-        
-        UpdateTrialsUI(); // update the number of trials
+       /* UpdateTrialsUI(); */// update the number of trials
 
         // Display result
         if (!pass)
         {
             PassBox.GetComponent<Text>().text = "FAIL!";
+            playerSequence.Clear(); // Reset the player's sequence on failure
+            currentQTEIndex = 0; // Restart the sequence
         }
         else
         {
             PassBox.GetComponent<Text>().text = "PASS!";
             success++;
+            currentQTEIndex++; // Move to the next QTE in the sequence
         }
 
         // Erase result
@@ -180,9 +204,9 @@ public class QTESystem_Notes : MonoBehaviour
         Debug.Log("Next");
     }
 
-    IEnumerator Results()
+    IEnumerator Results(bool win)
     {
-        if (success >= requiredSuccess) // WIN
+        if (win) // WIN
         {
             PassBox.GetComponent<Text>().text = "Not bad, Rookie.";
             yield return new WaitForSeconds(cooldownBetween);
@@ -197,6 +221,24 @@ public class QTESystem_Notes : MonoBehaviour
             SceneManager.LoadScene("SCN_NIVEAU1");
             Debug.Log("LOSE");
         }
+    }
+
+    bool IsSequenceCorrect()
+    {
+        if (playerSequence.Count != QTEOrder.Length)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < QTEOrder.Length; i++)
+        {
+            if (playerSequence[i] != QTEGen[QTEOrder[i]].key)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     void SetAlpha(GameObject obj, float alpha) // call ALPHA 
