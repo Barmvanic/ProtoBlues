@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 231681805}
   - component: {fileID: 231681807}
   - component: {fileID: 231681806}
+  - component: {fileID: 231681808}
   m_Layer: 0
   m_Name: P1
   m_TagString: Player
@@ -519,6 +520,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!95 &231681808
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231681802}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2a198e1fa7e96d4daa0bbd7a7bc7f01, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &236750385
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +665,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5.05
+    OrthographicSize: 3.26
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1003,7 +1025,7 @@ Transform:
   m_GameObject: {fileID: 556339517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.64001, y: -0.3899961, z: 0}
+  m_LocalPosition: {x: 0.202, y: -0.3899961, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1140,7 +1162,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.04, y: -0.48, z: 0}
-  m_LocalScale: {x: 0.5703125, y: 1, z: 1}
+  m_LocalScale: {x: 0.63082266, y: 1.1061, z: 1.1061}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1997,8 +2019,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 2.1588323
-  m_PointLightOuterRadius: 4.6595564
+  m_PointLightInnerRadius: 2.29
+  m_PointLightOuterRadius: 3.54
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2050,7 +2072,7 @@ Transform:
   m_GameObject: {fileID: 1204373403}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15900123, y: -0.82000405, z: 0}
+  m_LocalPosition: {x: 1.23, y: -0.82000405, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2134,7 +2156,7 @@ Transform:
   m_GameObject: {fileID: 1361801695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5700027, y: -0.58999306, z: 0}
+  m_LocalPosition: {x: -1.1, y: -0.58999306, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2255,7 +2277,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.05
+  orthographic size: 3.26
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2849,14 +2871,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1f59e79cad93a41aed780dfd38e420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteCount: 6
   notereset: 0
-  requiredSucess: 4
+  requiredSuccess: 4
   success: 0
   QTEGen:
-  - {fileID: 1204373403}
-  - {fileID: 1361801695}
-  - {fileID: 556339517}
+  - qteObject: {fileID: 1204373403}
+    key: BKey
+  - qteObject: {fileID: 1361801695}
+    key: XKey
+  - qteObject: {fileID: 556339517}
+    key: YKey
   cooldownBetween: 1.5
   timerPress: 3
   PassBox: {fileID: 353472741}
