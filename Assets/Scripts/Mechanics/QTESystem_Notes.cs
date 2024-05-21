@@ -2,9 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 [System.Serializable]
-public class QTEItem
+public class QTEItem // permits to set up the key with the image 
 {
     public GameObject qteObject; // the GameObject representing the QTE (with the image)
     public string key; // the key associated with this QTE (like"BKey")
@@ -23,7 +24,7 @@ public class QTESystem_Notes : MonoBehaviour
     private int i; // random QTE
 
     // TIMERS
-    [SerializeField] private float cooldownBetween = 1.5f; // cooldown result
+    [SerializeField] private float cooldownBetween = 2.5f; // cooldown result
     [SerializeField] private float timerPress = 3f; // time you have to press the QTE
     private bool waitingForKey;
     private float timer;
@@ -31,6 +32,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     // UI
     public GameObject PassBox;
+    public TextMeshProUGUI trialsText; 
 
     // QTE POSITIONS
     public Transform[] QTEPositions; // positions for QTE appearance
@@ -39,6 +41,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     void Start()
     {
+        UpdateTrialsUI();
         waitingForKey = true;
         timer = timerPress; // reset timer
 
@@ -61,18 +64,32 @@ public class QTESystem_Notes : MonoBehaviour
         Timer(); // start timer for pressing
     }
 
+
+    void UpdateTrialsUI() // update the number of trials 
+    {
+        if (trialsText != null)
+        {
+            trialsText.text = "Trials :" + trials.ToString() + "/4";
+        }    
+        else
+        {
+            Debug.LogError("Trials Text UI component is not assigned in the inspector.");
+        }
+            
+    }
     void QTEPlay()
     {
         if (waitingForKey) // gen key
         {
+
             if (QTEGen.Length == 0 || QTEPositions.Length == 0)
             {
                 Debug.LogError("QTEGen or QTEPositions array is empty. Please populate them in the inspector.");
                 return;
             }
-
             i = Random.Range(0, QTEGen.Length); // generate random number for QTEGen
-            int positionIndex = Random.Range(0, QTEPositions.Length); // get a random position
+            int positionIndex = Random.Range(0, QTEPositions.Length); // get a random position 
+
 
             if (currentQTE != null)
             {
@@ -117,7 +134,7 @@ public class QTESystem_Notes : MonoBehaviour
     IEnumerator Starting()
     {
         yield return new WaitForSeconds(cooldownBetween);
-        PassBox.GetComponent<Text>().text = "You're ready? Let's go ~";
+        PassBox.GetComponent<Text>().text = "Are you ready?";
         yield return new WaitForSeconds(cooldownBetween);
         PassBox.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(cooldownBetween);
@@ -128,6 +145,9 @@ public class QTESystem_Notes : MonoBehaviour
     IEnumerator Next(bool pass)
     {
         timer = cooldownBetween * 2; // just to be sure timer does not go down to 0 when displaying result
+
+        
+        UpdateTrialsUI(); // update the number of trials
 
         // Display result
         if (!pass)
@@ -145,7 +165,7 @@ public class QTESystem_Notes : MonoBehaviour
         PassBox.GetComponent<Text>().text = "";
         if (currentQTE != null)
         {
-            SetAlpha(currentQTE, 0); // Hide current QTE GameObject
+            SetAlpha(currentQTE, 0); // hide current QTE GameObject
             Destroy(currentQTE, cooldownBetween); // Destroy after cooldown
         }
 
@@ -179,7 +199,7 @@ public class QTESystem_Notes : MonoBehaviour
         }
     }
 
-    void SetAlpha(GameObject obj, float alpha)
+    void SetAlpha(GameObject obj, float alpha) // call ALPHA 
     {
         SpriteRenderer renderer = obj.GetComponent<SpriteRenderer>();
         if (renderer != null)
