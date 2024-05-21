@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,13 +10,14 @@ public class QTESystem_Notes : MonoBehaviour
 {
     // REQUIREMENTS
     public static GameManager instance; // for notecount
+    [SerializeField] private int noteCount = 6;
     [SerializeField] private int notereset = 0;
     [SerializeField] private int requiredSucess = 4; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     private int trials = 0;
 
     // QTE GEN
-    //[SerializeField] private char[] QTEGen = new char[3]; // QTE choices
+    [SerializeField] private GameObject[] QTEGen;  // QTE choices
     private int i; // random QTE
 
     // TIMERS
@@ -25,20 +28,18 @@ public class QTESystem_Notes : MonoBehaviour
     private bool started;
 
     // UI
-    public GameObject DisplayBox;
     public GameObject PassBox;
 
     // QTE UI IMAGE
-    public Image QTEImage; // UI Image component for displaying QTE
-    public Sprite[] QTESprites; // sprites for QTE keys (X, Y, B)
-    public List<Vector3> QTEPositions; // positions for QTE appearance
+    //public Image QTEImage; // UI Image component for displaying QTE
+    //public Sprite[] QTESprites; // sprites for QTE keys (X, Y, B) 
+    public Transform[] QTEPositions;// positions for QTE appearance
+
+    private GameObject currentQTE; 
 
     // Start is called before the first frame update
     void Start()
     {
-        //QTEGen[0] = 'X';
-        //QTEGen[1] = 'Y';
-        //QTEGen[2] = 'B';
 
         waitingForKey = true;
         timer = timerPress; // reset timer
@@ -54,7 +55,8 @@ public class QTESystem_Notes : MonoBehaviour
     {
         if (started)
         {
-            if (success < requiredSucess && trials < GameManager.Instance.noteCount) // if not win yet and not lose yet
+            //if (success < requiredSucess && trials < GameManager.Instance.noteCount) // if not win yet and not lose yet
+            if (success < requiredSucess && trials < noteCount) // if not win yet and not lose yet
             {
                 QTEPlay();
             }
@@ -63,15 +65,30 @@ public class QTESystem_Notes : MonoBehaviour
 
         Timer(); // start timer for pressing
     }
-
     void QTEPlay()
     {
+
         if (waitingForKey) // gen key
         {
-            i = Random.Range(0, 3); // generate random number for QTEGen
-            QTEImage.sprite = QTESprites[i]; // update the QTE image based on the key
-            int posIndex = Random.Range(0, QTEPositions.Count); // choose a random position index
-            QTEImage.rectTransform.localPosition = QTEPositions[posIndex]; // set the position
+            if (QTEGen.Length == 0 || QTEPositions.Length == 0)
+            {
+                Debug.LogError("QTEGen or QTEPositions array is empty. Please populate them in the inspector.");
+                return;
+            }
+
+            i = Random.Range(0, QTEGen.Length); // generate random number for QTEGen
+            int positionIndex = Random.Range(0, QTEPositions.Length); // get a random position
+
+            if (currentQTE != null)
+            {
+                StartCoroutine(FadeOutAndDestroy(currentQTE)); // fade and destroy the current QTE
+            }
+
+            currentQTE = Instantiate(QTEGen[i], QTEPositions[positionIndex].position, Quaternion.identity); // instantiate QTE GameObject at random position
+            //QTEImage.sprite = QTESprites[i]; // update the QTE image based on the key
+
+            StartCoroutine(FadeIn(currentQTE)); //fade for the new QTE
+
             waitingForKey = false;
             timer = timerPress;
         }
@@ -129,7 +146,11 @@ public class QTESystem_Notes : MonoBehaviour
         // Erase result
         yield return new WaitForSeconds(cooldownBetween);
         PassBox.GetComponent<Text>().text = "";
-        QTEImage.sprite = null; // clear the QTE image
+        //QTEImage.sprite = null; // clear the QTE image
+        if (currentQTE != null)
+        {
+            StartCoroutine(FadeOutAndDestroy(currentQTE));
+        }
 
         trials++;
 
@@ -159,6 +180,44 @@ public class QTESystem_Notes : MonoBehaviour
             SceneManager.LoadScene("SCN_NIVEAU1");
             Debug.Log("LOSE");
         }
+    }
+
+    IEnumerator FadeIn (GameObject obj)
+    {
+        Renderer renderer =obj.GetComponent<Renderer>();
+        if (renderer == null) yield break;
+
+        Color color = renderer.material.color;
+        color.a = 0; // color of alpha
+        renderer.material.color = color;
+
+        while (color.a < 1.0f)
+        {
+            color.a += Time.deltaTime / cooldownBetween; 
+            renderer.material.color = color;
+            yield return null; 
+        }
+
+        color.a = 1.0f; //full opacity 
+        renderer.material.color = color;
+        Debug.Log("FADE IN");
+    }
+
+    IEnumerator FadeOutAndDestroy (GameObject obj) 
+    {
+        Renderer renderer =obj.GetComponent<Renderer>();
+        if (renderer == null) yield break;
+
+        Color color = renderer.material.color;
+
+        while (color.a >0.0f)
+        {
+            color.a -= Time.deltaTime / cooldownBetween; // adjust the speed of fade out 
+            renderer.material.color = color;
+            yield return null;
+        }
+        Debug.Log("FADE OUT");
+        Destroy(obj); // object destroy 
     }
 }
 
