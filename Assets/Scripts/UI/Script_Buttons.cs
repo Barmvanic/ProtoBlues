@@ -13,6 +13,6 @@ public class Script_Buttons : MonoBehaviour
 
     public void Options_Button()
     {
-        SceneManager.LoadScene("SCN_NIVEAU1");
+        SceneManager.LoadScene("SCN_OPTIONS");
     }
 }
