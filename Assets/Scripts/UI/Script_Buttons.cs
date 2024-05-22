@@ -10,4 +10,9 @@ public class Script_Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("SCN_NIVEAU1");
     }
+
+    public void Options_Button()
+    {
+        SceneManager.LoadScene("SCN_NIVEAU1");
+    }
 }
