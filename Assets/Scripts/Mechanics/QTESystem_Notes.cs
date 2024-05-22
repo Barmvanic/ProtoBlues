@@ -31,7 +31,7 @@ public class QTESystem_Notes : MonoBehaviour
     private List<string> playerSequence = new List<string>();
 
     // TIMERS
-    [SerializeField] private float cooldownBetween = 2.5f; // cooldown result
+    [SerializeField] private float cooldownBetween = 1.0f; // cooldown result
     [SerializeField] private float timerPress = 3f; // time you have to press the QTE
     private bool waitingForKey;
     private float timer;
