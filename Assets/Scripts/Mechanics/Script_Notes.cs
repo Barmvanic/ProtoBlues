@@ -16,7 +16,7 @@ public class Script_Notes : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            timer.remainingTime -= 5f; 
+            timer.remainingTime -= 15f; 
 
             Destroy(gameObject);
         }

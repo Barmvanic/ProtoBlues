@@ -18,7 +18,7 @@ public class QTESystem_Notes : MonoBehaviour
     [SerializeField] private int notereset = 0;
     [SerializeField] private int requiredSuccess = 4; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
-    private int trials = 0;
+    [SerializeField] private int trials = 0;// count of trials 
 
     // QTE GEN
     [SerializeField] private QTEItem[] QTEGen; // Array of QTE items
@@ -48,7 +48,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     void Start()
     {
-        //UpdateTrialsUI();
+        UpdateTrialsUI();
         waitingForKey = true;
         timer = timerPress; // reset timer
 
@@ -81,17 +81,17 @@ public class QTESystem_Notes : MonoBehaviour
         Timer(); // start timer for pressing
     }
 
-    //void UpdateTrialsUI() // update the number of trials 
-    //{
-    //    if (trialsText != null)
-    //    {
-    //        trialsText.text = "Trials :" + trials.ToString() + "/4";
-    //    }
-    //    else
-    //    {
-    //        Debug.LogError("Trials Text UI component is not assigned in the inspector.");
-    //    }
-    //}
+    void UpdateTrialsUI() // update the number of trials 
+    {
+        if (trialsText != null)
+        {
+            trialsText.text = "Trials :" + trials.ToString() + "/4";
+        }
+        else
+        {
+            Debug.LogError("Trials Text UI component is not assigned in the inspector.");
+        }
+    }
 
     void QTEPlay()
     {
@@ -168,7 +168,7 @@ public class QTESystem_Notes : MonoBehaviour
     {
         timer = cooldownBetween * 2; // just to be sure timer does not go down to 0 when displaying result
 
-       /* UpdateTrialsUI(); */// update the number of trials
+        UpdateTrialsUI(); // update the number of trials
 
         // Display result
         if (!pass)

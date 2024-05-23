@@ -26,7 +26,7 @@ public class Script_Timer : MonoBehaviour
         else if (remainingTime < 0)
         {
            remainingTime = 0;
-            SceneManager.LoadScene("SCN_Main_Menu");
+           SceneManager.LoadScene("SCN_Main_Menu");
         } // back to screen game over 
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);

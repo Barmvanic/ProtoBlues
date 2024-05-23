@@ -30,6 +30,8 @@ public class MovementPlayer : MonoBehaviour
     public Transform groundCheck;
     private float groundCheckRadius = 0.2f;
 
+    //NOTECOUNT 
+    public Inventory_notes nc; //notecount
     
 
 
@@ -122,7 +124,15 @@ public class MovementPlayer : MonoBehaviour
             Debug.Log("collidedDEAD");
 
         }
+
+        if (collision.CompareTag("Note"))
+        {
+            Destroy(collision.gameObject);
+            nc.notes++; 
+        }
     }
+
+    
 
     private void Checkpoint(Transform checkpointTransform)
     {

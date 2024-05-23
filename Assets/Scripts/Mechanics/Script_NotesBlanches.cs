@@ -11,6 +11,7 @@ public class Script_NotesBlanches : MonoBehaviour
     bool moveNote;
 
     [SerializeField] GameObject target;
+    [SerializeField] Script_Timer timer;
 
     void Start()
     {
@@ -32,6 +33,8 @@ public class Script_NotesBlanches : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            timer.remainingTime += 10f;
+            Debug.Log("+10");
             gameObject.GetComponent<Collider2D>().enabled = false;
             moveNote = true;
             //Destroy(gameObject, 2f); 
@@ -41,7 +44,7 @@ public class Script_NotesBlanches : MonoBehaviour
 
             Debug.Log("Note collected");
 
-            
+     
         }
     }
-}
+ }
