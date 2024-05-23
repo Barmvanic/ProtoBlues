@@ -18,7 +18,7 @@ public class QTESystem_Notes : MonoBehaviour
     [SerializeField] private int notereset = 0;
     [SerializeField] private int requiredSuccess = 3; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
-    [SerializeField] private int trials = 2;// count of trials 
+    [SerializeField] private int trials = 0;// count of trials 
     
 
     // QTE GEN
@@ -49,7 +49,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     void Start()
     {
-        //UpdateTrialsUI();
+        
         waitingForKey = true;
         timer = timerPress; // reset timer
 
@@ -60,9 +60,12 @@ public class QTESystem_Notes : MonoBehaviour
 
     void Update()
     {
+
+        UpdateTrialsUI();
+
         if (started)
         {
-            if (success < requiredSuccess && trials < GameManager.Instance.noteCount) // if not win yet and not lose yet
+            if (success < requiredSuccess && trials <= GameManager.Instance.noteCount) // if not win yet and not lose yet
             {
                 QTEPlay();
             }
@@ -169,7 +172,7 @@ public class QTESystem_Notes : MonoBehaviour
     {
         timer = cooldownBetween * 2; // just to be sure timer does not go down to 0 when displaying result
 
-        UpdateTrialsUI(); // update the number of trials
+        //UpdateTrialsUI(); // update the number of trials
 
         // Display result
         if (!pass)
@@ -177,6 +180,8 @@ public class QTESystem_Notes : MonoBehaviour
             PassBox.GetComponent<Text>().text = "FAIL!";
             playerSequence.Clear(); // Reset the player's sequence on failure
             currentQTEIndex = 0; // Restart the sequence
+            trials++;
+            success = 0;
         }
         else
         {
@@ -194,7 +199,7 @@ public class QTESystem_Notes : MonoBehaviour
             Destroy(currentQTE, cooldownBetween); // Destroy after cooldown
         }
 
-        trials--;
+        
 
         // Next
         float wait = cooldownBetween * 2 / 3;
@@ -216,7 +221,7 @@ public class QTESystem_Notes : MonoBehaviour
         }
         else // FAIL
         {
-            PassBox.GetComponent<Text>().text = "You'll have to do better, Andy ~";
+            PassBox.GetComponent<Text>().text = "You'll have to do better.";
             yield return new WaitForSeconds(cooldownBetween);
             GameManager.Instance.noteCount = notereset;
             SceneManager.LoadScene("SCN_NIVEAU1");

@@ -15,4 +15,9 @@ public class Script_Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("SCN_OPTIONS");
     }
+
+    public void Change_Scene1()
+    {
+        SceneManager.LoadScene("SCN_Main_Menu");
+    }
 }
