@@ -29264,7 +29264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 963934889}
-  requiredNoteCount: 4
+  requiredNoteCount: 3
 --- !u!114 &1404123461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29277,7 +29277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e091581392d932a48a348b92670dc4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteCount: 6
+  noteCount: 3
 --- !u!1 &1406414565
 GameObject:
   m_ObjectHideFlags: 0

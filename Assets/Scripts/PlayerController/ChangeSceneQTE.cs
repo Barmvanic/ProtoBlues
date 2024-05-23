@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ChangeSceneQTE : MonoBehaviour
 {
     public Text messageText;
-    public int requiredNoteCount = 4;
+    public int requiredNoteCount = 3;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,7 +20,7 @@ public class ChangeSceneQTE : MonoBehaviour
             else
             {
                 // Show the message in the UI
-                messageText.text = "You don't have all the notes, Andy.";
+                messageText.text = "You don't have all the notes, Dummy.";
                 StartCoroutine(ClearMessage());
             }
         }
