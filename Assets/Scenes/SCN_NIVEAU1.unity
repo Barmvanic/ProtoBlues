@@ -5298,7 +5298,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284190602}
-  - component: {fileID: 284190603}
   m_Layer: 0
   m_Name: InventoryNotes
   m_TagString: Untagged
@@ -5321,20 +5320,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1469341352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &284190603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284190601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notes: 0
-  noteText: {fileID: 1314348050}
 --- !u!1 &284646598
 GameObject:
   m_ObjectHideFlags: 0
@@ -15515,7 +15500,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 1521877437}
-  nc: {fileID: 284190603}
+  nc: {fileID: 936874512}
 --- !u!61 &735862476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19580,7 +19565,7 @@ GameObject:
   - component: {fileID: 936874511}
   - component: {fileID: 936874510}
   - component: {fileID: 936874509}
-  - component: {fileID: 936874508}
+  - component: {fileID: 936874512}
   m_Layer: 5
   m_Name: Scoring_notes
   m_TagString: Untagged
@@ -19609,20 +19594,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &936874508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936874506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afc6742c98dc814bb3f526c97554e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Notes: {fileID: 284190603}
-  textScore: {fileID: 1314348050}
 --- !u!114 &936874509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19686,6 +19657,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &936874512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936874506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notes: 0
+  noteText: {fileID: 1314348050}
 --- !u!1 &938700907
 GameObject:
   m_ObjectHideFlags: 0
@@ -23999,7 +23984,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1132064805}
-  - component: {fileID: 1132064806}
   m_Layer: 0
   m_Name: InventoryNotes (1)
   m_TagString: Untagged
@@ -24022,20 +24006,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1075990241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1132064806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132064804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notes: 0
-  noteText: {fileID: 0}
 --- !u!1 &1139508746
 GameObject:
   m_ObjectHideFlags: 0
@@ -26847,7 +26817,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293462013}
-  - component: {fileID: 1293462014}
   m_Layer: 0
   m_Name: InventoryNotes (1)
   m_TagString: Untagged
@@ -26870,20 +26839,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1921256334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1293462014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293462012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notes: 0
-  noteText: {fileID: 1314348050}
 --- !u!1001 &1303311959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31088,7 +31043,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469341352}
-  - component: {fileID: 1469341353}
   m_Layer: 0
   m_Name: Notes_blanches
   m_TagString: Untagged
@@ -31115,20 +31069,6 @@ Transform:
   - {fileID: 284190602}
   m_Father: {fileID: 879205810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1469341353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469341351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afc6742c98dc814bb3f526c97554e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Notes: {fileID: 284190603}
-  textScore: {fileID: 1314348050}
 --- !u!1 &1470237812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5749421510009622381, guid: b992c90f578ab81488e638db82e09849,
@@ -38918,7 +38858,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1921256334}
-  - component: {fileID: 1921256335}
   m_Layer: 0
   m_Name: Notes blanches
   m_TagString: Untagged
@@ -38946,20 +38885,6 @@ Transform:
   - {fileID: 1293462013}
   m_Father: {fileID: 1775410086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1921256335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921256333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afc6742c98dc814bb3f526c97554e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Notes: {fileID: 1293462014}
-  textScore: {fileID: 1314348050}
 --- !u!1 &1924792317
 GameObject:
   m_ObjectHideFlags: 0
