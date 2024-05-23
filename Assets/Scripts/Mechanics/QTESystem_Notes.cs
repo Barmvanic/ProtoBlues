@@ -16,7 +16,7 @@ public class QTESystem_Notes : MonoBehaviour
 {
     public static GameManager instance; // for notecount
     [SerializeField] private int notereset = 0;
-    [SerializeField] private int requiredSuccess = 4; // number of successful QTE for passing lvl
+    [SerializeField] private int requiredSuccess = 3; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     [SerializeField] private int trials = 0;// count of trials 
 

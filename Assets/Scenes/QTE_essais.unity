@@ -325,6 +325,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   groundCheck: {fileID: 0}
+  nc: {fileID: 0}
 --- !u!50 &231681807
 Rigidbody2D:
   serializedVersion: 4
@@ -3473,7 +3474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notereset: 0
-  requiredSuccess: 4
+  requiredSuccess: 3
   success: 0
   trials: 0
   QTEGen:
