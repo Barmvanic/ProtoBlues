@@ -20,7 +20,7 @@ public class MovementPlayer : MonoBehaviour
     //bool doubleJump;
     bool facingRight = true;
     bool isGrounded = false;
-    // private bool _jumping = false;
+   
 
     //CHECKPOINT
     private Transform LastCheckpoint = null;
@@ -32,7 +32,9 @@ public class MovementPlayer : MonoBehaviour
 
     //NOTECOUNT 
     public Inventory_notes nc; //notecount
-    
+
+    SpriteRenderer sr;
+
 
 
     void Start()
@@ -41,6 +43,8 @@ public class MovementPlayer : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        sr = GetComponent<SpriteRenderer>();
 
 
     }
@@ -66,6 +70,9 @@ public class MovementPlayer : MonoBehaviour
             animator.SetBool("isJumping", false);
             
         }
+
+        //sr.color = Color.Lerp(sr.color, Color.white, Time.deltaTime / 1.5f);// 3 seconds to get back to white
+
     }
 
     void Movement ()
@@ -110,6 +117,14 @@ public class MovementPlayer : MonoBehaviour
         facingRight = !facingRight; 
 
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.CompareTag("Croche"))
+    //    { 
+    //    }
+    //    sr.color = new Color(2, 0, 0, 1); // red 
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

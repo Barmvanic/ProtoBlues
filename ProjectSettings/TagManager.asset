@@ -9,6 +9,7 @@ TagManager:
   - PlatformMovement
   - Checkpoint
   - Note
+  - Croche
   layers:
   - Default
   - TransparentFX

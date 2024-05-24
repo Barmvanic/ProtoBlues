@@ -14,8 +14,8 @@ public class Script_MovingPlatform : MonoBehaviour
 
     private Transform _targetWaypoint; // which waypoint to move to
     private int _currentWaypointIndex = 0; // to start the index of the waypoint array
-    // rializeField] PlatformMovement PlatformMovement;
-  
+    [SerializeField] PlatformMovement PlatformMovement;
+
 
 
     // Start is called before the first frame update
