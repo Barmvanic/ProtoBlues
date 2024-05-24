@@ -4859,6 +4859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: 0
+  noteText: {fileID: 0}
 --- !u!1 &284646598
 GameObject:
   m_ObjectHideFlags: 0
@@ -7777,6 +7778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!61 &416123161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12507,6 +12509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &667808605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13784,6 +13787,12 @@ MonoBehaviour:
   jump: 15
   jumpVelocity: 1.8
   rb: {fileID: 735862473}
+  animator: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheck: {fileID: 0}
+  nc: {fileID: 0}
 --- !u!61 &735862476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13896,7 +13905,7 @@ PolygonCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -15949,6 +15958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &851730509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17192,7 +17202,7 @@ SpriteRenderer:
   m_Size: {x: 9.37, y: 8.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &922343676
@@ -18338,6 +18348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &974874794
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21423,6 +21434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: 0
+  noteText: {fileID: 0}
 --- !u!1 &1139508746
 GameObject:
   m_ObjectHideFlags: 0
@@ -23909,6 +23921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notes: 0
+  noteText: {fileID: 0}
 --- !u!1001 &1303311959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24512,6 +24525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &1337378221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24665,6 +24679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 763373541}
+  timer: {fileID: 0}
 --- !u!61 &1339703921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25875,6 +25890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &1387120897
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26302,6 +26318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 963934889}
+  requiredNoteCount: 3
 --- !u!1 &1406414565
 GameObject:
   m_ObjectHideFlags: 0
@@ -28750,6 +28767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1814385703}
+  timer: {fileID: 0}
 --- !u!61 &1577492163
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31250,6 +31268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &1734011007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31892,6 +31911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &1756544678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33609,6 +33629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   target: {fileID: 1868390462}
+  timer: {fileID: 0}
 --- !u!212 &1866326198
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class PlatformMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        _originalParent = transform.parent;
     }
 
     public void SetParent(Transform newParent) // to P1 stay on the moving platform 
