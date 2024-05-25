@@ -15,7 +15,7 @@ public class ChangeSceneQTE : MonoBehaviour
             if (GameManager.Instance.noteCount >= requiredNoteCount)
             {
                 // Load the next scene if the player has collected the required number of notes
-                SceneManager.LoadScene("QTE_essais");
+                SceneManager.LoadScene("SCN_QTE");
             }
             else
             {

@@ -35,7 +35,7 @@ public class QTESystem_Notes : MonoBehaviour
     private List<string> playerSequence = new List<string>();
 
     // TIMERS
-    [SerializeField] private float cooldownBetween = 1.0f; // cooldown result
+    [SerializeField] private float cooldownBetween = 1f; // cooldown result
     [SerializeField] private float timerPress = 3f; // time you have to press the QTE
     private bool waitingForKey;
     private float timer;
@@ -55,6 +55,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     // AUDIO
     private AudioSource audioSource;
+    [SerializeField] private float timingWindow = 2f; // Time window for pressing the key in rhythm
 
     void Start()
     {
@@ -155,10 +156,18 @@ public class QTESystem_Notes : MonoBehaviour
             {
                 if (Input.GetButtonDown(QTEGen[QTEOrder[currentQTEIndex]].key)) // check if the correct key is pressed
                 {
-                    playerSequence.Add(QTEGen[QTEOrder[currentQTEIndex]].key); // Add key to player sequence
-                    audioSource.PlayOneShot(QTEGen[QTEOrder[currentQTEIndex]].sound);
-                    SetAlpha(currentQTE, 1);
-                    StartCoroutine(Next(true)); // if good key
+                    if (timerPress - timer <= timingWindow) // check if the key is pressed within the time 
+                    {
+                        playerSequence.Add(QTEGen[QTEOrder[currentQTEIndex]].key); // Add key to player sequence
+                        audioSource.PlayOneShot(QTEGen[QTEOrder[currentQTEIndex]].sound);
+                        SetAlpha(currentQTE, 1);
+                        StartCoroutine(Next(true)); // if good key
+                    }
+                    else
+                    {
+                        StartCoroutine(Next(false)); // correct key but not in rythm
+                    }
+          
                 }
                 else
                 {
@@ -190,8 +199,17 @@ public class QTESystem_Notes : MonoBehaviour
         yield return new WaitForSeconds(cooldownBetween);
 
         Cinematique.Play();
-        yield return new WaitForSeconds(4.5f);
-        PassBox.GetComponent<Text>().text = "Now, your turn.";
+
+        yield return new WaitForSeconds(4f);
+        PassBox.GetComponent<Text>().text = "Your turn.";
+        yield return new WaitForSeconds(cooldownBetween * 2/3);
+        PassBox.GetComponent<Text>().text = "3";
+        yield return new WaitForSeconds(cooldownBetween * 2 );
+        PassBox.GetComponent<Text>().text = "2";
+        yield return new WaitForSeconds(cooldownBetween * 2 );
+        PassBox.GetComponent<Text>().text = "1";
+        yield return new WaitForSeconds(cooldownBetween * 2 );
+        PassBox.GetComponent<Text>().text = "";
         started = true;
         Debug.Log("Starting");
     }
@@ -222,11 +240,11 @@ public class QTESystem_Notes : MonoBehaviour
         }
 
         // Erase result
-        yield return new WaitForSeconds(cooldownBetween/10);
+        yield return new WaitForSeconds(cooldownBetween );
         PassBox.GetComponent<Text>().text = "";
 
         // Next
-        float wait = (cooldownBetween * 2/3);
+        float wait = cooldownBetween * 2/3;
         yield return new WaitForSeconds(wait);
         waitingForKey = true;
         timer = timerPress; // reset timer
@@ -252,7 +270,7 @@ public class QTESystem_Notes : MonoBehaviour
         }
         else // FAIL
         {
-            PassBox.GetComponent<Text>().text = "You'll have to do better.";
+            PassBox.GetComponent<Text>().text = "You don't have the ryhtm.";
             yield return new WaitForSeconds(cooldownBetween);
             GameManager.Instance.noteCount = notereset;
             SceneManager.LoadScene("SCN_NIVEAU1");

@@ -20,4 +20,9 @@ public class Script_Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("SCN_Main_Menu");
     }
+
+    public void After_Reward()
+    {
+        SceneManager.LoadScene("SCN_NIVEAU1_2");
+    }
 }
