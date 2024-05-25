@@ -11,6 +11,7 @@ public class QTEItem // permits to set up the key with the image
 {
     public GameObject qteObject; // the GameObject representing the QTE (with the image)
     public string key; // the key associated with this QTE (like"BKey")
+    public AudioClip sound; // the sound associated with this QTE
 }
 
 public class QTESystem_Notes : MonoBehaviour
@@ -20,6 +21,7 @@ public class QTESystem_Notes : MonoBehaviour
     [SerializeField] private int requiredSuccess = 3; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     [SerializeField] private int trials = 0;// count of trials 
+
 
 
     // QTE GEN
@@ -51,21 +53,29 @@ public class QTESystem_Notes : MonoBehaviour
     // TIMELINE QTE
     [SerializeField] PlayableDirector Cinematique;
 
+    // AUDIO
+    private AudioSource audioSource;
+
     void Start()
     {
-
+        
         waitingForKey = true;
         timer = timerPress; // reset timer
 
         started = false;
         PassBox.GetComponent<Text>().text = "";
         StartCoroutine(Starting());
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+
     }
 
     void Update()
     {
 
         UpdateTrialsUI();
+        
 
         if (started)
         {
@@ -125,6 +135,12 @@ public class QTESystem_Notes : MonoBehaviour
                 // Destroy(currentQTE); // Destroy previous QTE GameObject
             }
 
+            // Play the sound associated with the current QTE
+            if (QTEGen[qteIndex].sound != null)
+            {
+                //audioSource.PlayOneShot(QTEGen[qteIndex].sound);
+            }
+
             // currentQTE = Instantiate(QTEGen[qteIndex].qteObject, QTEPositions[positionIndex].position, Quaternion.identity); // instantiate QTE GameObject at ordered position
             currentQTE = QTEGen[qteIndex].qteObject;
             Debug.Log(qteIndex); 
@@ -140,6 +156,7 @@ public class QTESystem_Notes : MonoBehaviour
                 if (Input.GetButtonDown(QTEGen[QTEOrder[currentQTEIndex]].key)) // check if the correct key is pressed
                 {
                     playerSequence.Add(QTEGen[QTEOrder[currentQTEIndex]].key); // Add key to player sequence
+                    audioSource.PlayOneShot(QTEGen[QTEOrder[currentQTEIndex]].sound);
                     SetAlpha(currentQTE, 1);
                     StartCoroutine(Next(true)); // if good key
                 }
@@ -167,14 +184,14 @@ public class QTESystem_Notes : MonoBehaviour
     IEnumerator Starting()
     {
         yield return new WaitForSeconds(cooldownBetween * 2);
-        PassBox.GetComponent<Text>().text = "Follow along with my music.";
+        PassBox.GetComponent<Text>().text = "Listen carefully.";
         yield return new WaitForSeconds(cooldownBetween);
         PassBox.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(cooldownBetween);
 
         Cinematique.Play();
         yield return new WaitForSeconds(4.5f);
-        PassBox.GetComponent<Text>().text = "Your turn.";
+        PassBox.GetComponent<Text>().text = "Now, your turn.";
         started = true;
         Debug.Log("Starting");
     }
@@ -186,7 +203,7 @@ public class QTESystem_Notes : MonoBehaviour
         // Display result
         if (!pass)
         {
-            PassBox.GetComponent<Text>().text = "FAIL!";
+            PassBox.GetComponent<Text>().text = "Try again.";
 
             for (int i = 0; i < playerSequence.Count; i++)
             {
@@ -199,17 +216,17 @@ public class QTESystem_Notes : MonoBehaviour
         }
         else
         {
-            PassBox.GetComponent<Text>().text = "PASS!";
+            PassBox.GetComponent<Text>().text = "Good.";
             success++;
             currentQTEIndex++; // Move to the next QTE in the sequence
         }
 
         // Erase result
-        yield return new WaitForSeconds(cooldownBetween);
+        yield return new WaitForSeconds(cooldownBetween/10);
         PassBox.GetComponent<Text>().text = "";
 
         // Next
-        float wait = cooldownBetween * 2 / 3;
+        float wait = (cooldownBetween * 2/3);
         yield return new WaitForSeconds(wait);
         waitingForKey = true;
         timer = timerPress; // reset timer
