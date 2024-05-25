@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 
 [System.Serializable]
 public class QTEItem // permits to set up the key with the image 
@@ -19,7 +20,7 @@ public class QTESystem_Notes : MonoBehaviour
     [SerializeField] private int requiredSuccess = 3; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     [SerializeField] private int trials = 0;// count of trials 
-    
+
 
     // QTE GEN
     [SerializeField] private QTEItem[] QTEGen; // Array of QTE items
@@ -47,9 +48,12 @@ public class QTESystem_Notes : MonoBehaviour
 
     private GameObject currentQTE;
 
+    // TIMELINE QTE
+    [SerializeField] PlayableDirector Cinematique;
+
     void Start()
     {
-        
+
         waitingForKey = true;
         timer = timerPress; // reset timer
 
@@ -118,13 +122,14 @@ public class QTESystem_Notes : MonoBehaviour
 
             if (currentQTE != null)
             {
-                SetAlpha(currentQTE, 0); // Hide previous QTE GameObject
-                Destroy(currentQTE, cooldownBetween); // Destroy after cooldown
+                // Destroy(currentQTE); // Destroy previous QTE GameObject
             }
 
-            currentQTE = Instantiate(QTEGen[qteIndex].qteObject, QTEPositions[positionIndex].position, Quaternion.identity); // instantiate QTE GameObject at ordered position
-            SetAlpha(currentQTE, 1); // Show new QTE GameObject
-
+            // currentQTE = Instantiate(QTEGen[qteIndex].qteObject, QTEPositions[positionIndex].position, Quaternion.identity); // instantiate QTE GameObject at ordered position
+            currentQTE = QTEGen[qteIndex].qteObject;
+            Debug.Log(qteIndex); 
+            Debug.Log(QTEGen[qteIndex].qteObject); 
+            //SetAlpha(currentQTE, 1);
             waitingForKey = false;
             timer = timerPress;
         }
@@ -135,6 +140,7 @@ public class QTESystem_Notes : MonoBehaviour
                 if (Input.GetButtonDown(QTEGen[QTEOrder[currentQTEIndex]].key)) // check if the correct key is pressed
                 {
                     playerSequence.Add(QTEGen[QTEOrder[currentQTEIndex]].key); // Add key to player sequence
+                    SetAlpha(currentQTE, 1);
                     StartCoroutine(Next(true)); // if good key
                 }
                 else
@@ -149,6 +155,7 @@ public class QTESystem_Notes : MonoBehaviour
         }
     }
 
+
     void Timer()
     {
         if (!waitingForKey && timer > 0)
@@ -159,11 +166,15 @@ public class QTESystem_Notes : MonoBehaviour
 
     IEnumerator Starting()
     {
-        yield return new WaitForSeconds(cooldownBetween);
-        PassBox.GetComponent<Text>().text = "Are you ready?";
+        yield return new WaitForSeconds(cooldownBetween * 2);
+        PassBox.GetComponent<Text>().text = "Follow along with my music.";
         yield return new WaitForSeconds(cooldownBetween);
         PassBox.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(cooldownBetween);
+
+        Cinematique.Play();
+        yield return new WaitForSeconds(4.5f);
+        PassBox.GetComponent<Text>().text = "Your turn.";
         started = true;
         Debug.Log("Starting");
     }
@@ -172,12 +183,15 @@ public class QTESystem_Notes : MonoBehaviour
     {
         timer = cooldownBetween * 2; // just to be sure timer does not go down to 0 when displaying result
 
-        //UpdateTrialsUI(); // update the number of trials
-
         // Display result
         if (!pass)
         {
             PassBox.GetComponent<Text>().text = "FAIL!";
+
+            for (int i = 0; i < playerSequence.Count; i++)
+            {
+                SetAlpha(QTEGen[i].qteObject, 0f); // clear the sequence if failure 
+            }
             playerSequence.Clear(); // Reset the player's sequence on failure
             currentQTEIndex = 0; // Restart the sequence
             trials++;
@@ -193,19 +207,19 @@ public class QTESystem_Notes : MonoBehaviour
         // Erase result
         yield return new WaitForSeconds(cooldownBetween);
         PassBox.GetComponent<Text>().text = "";
-        if (currentQTE != null)
-        {
-            SetAlpha(currentQTE, 0); // hide current QTE GameObject
-            Destroy(currentQTE, cooldownBetween); // Destroy after cooldown
-        }
-
-        
 
         // Next
         float wait = cooldownBetween * 2 / 3;
         yield return new WaitForSeconds(wait);
         waitingForKey = true;
         timer = timerPress; // reset timer
+
+        // Hide current QTE GameObject
+        /* if (currentQTE != null)
+        {
+            SetAlpha(currentQTE, 1);
+            Destroy(currentQTE, cooldownBetween); // Destroy after cooldown
+        }*/
 
         Debug.Log("Next");
     }
@@ -246,6 +260,8 @@ public class QTESystem_Notes : MonoBehaviour
 
         return true;
     }
+
+
 
     void SetAlpha(GameObject obj, float alpha) // call ALPHA 
     {

@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
     // Variables to manage state
     public int noteCount = 0;
 
+
+    void Start()
+    {
+        // Set the screen resolution
+        Screen.SetResolution(1920, 1080, true);
+    }
     public static GameManager Instance
     {
         get

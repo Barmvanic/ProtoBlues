@@ -5,13 +5,14 @@ using UnityEngine;
 public class Double_Jump : MonoBehaviour
 {
 
-    public bool isJumping;
+    
+    [SerializeField] MovementPlayer movementPlayer;
 
     private void OnCollisionEnter2D(Collision2D other) //hit different game object
     {
         if (other.gameObject.CompareTag("Floor")) // collide an object with a tag 
         {
-            isJumping = false; // not jumping
+            movementPlayer.doubleJump = false;
         }
 
     }
@@ -20,7 +21,7 @@ public class Double_Jump : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            isJumping = true; // jumping
+            movementPlayer.doubleJump = true;
         }
     }
 }

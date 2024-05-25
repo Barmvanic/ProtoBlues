@@ -7,10 +7,6 @@ public class Script_NotesBlanches : MonoBehaviour
 {
 
     public float speed = 4f;
-
-    bool moveNote;
-
-    [SerializeField] GameObject target;
     [SerializeField] Script_Timer timer;
 
     void Start()
@@ -21,11 +17,7 @@ public class Script_NotesBlanches : MonoBehaviour
     
     void Update()
     {
-        if (moveNote)
-        {
-            transform.position = Vector3.Lerp(transform.position, target.transform.position, speed *Time.deltaTime);
-            
-        }
+        
         
     }
 
@@ -35,9 +27,9 @@ public class Script_NotesBlanches : MonoBehaviour
         {
             timer.remainingTime += 10f;
             Debug.Log("+10");
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            moveNote = true;
-            //Destroy(gameObject, 2f); 
+            // gameObject.GetComponent<Collider2D>().enabled = false;
+            // moveNote = true;
+            Destroy(gameObject); 
 
             // Incrémente la variable noteCount dans le script ChangeSceneQTE
             GameManager.Instance.noteCount++;
