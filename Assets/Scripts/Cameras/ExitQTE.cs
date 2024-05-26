@@ -15,7 +15,7 @@ public class ExitQTE : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-        if (scene.name == "SCN_NIV3")
+        if (scene.name == "SCN_QTE")
             {
                 successfulQTECount++; // Incrémente le nombre de QTE réussies dans la scène 3
                 if (successfulQTECount >= 4)

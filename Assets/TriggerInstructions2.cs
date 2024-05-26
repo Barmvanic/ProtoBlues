@@ -12,7 +12,7 @@ public class TriggerInstructions2 : MonoBehaviour
     {
         if (Collision.CompareTag("Player"))
         {
-            instructionsText2.text = "You can fall through the platform with Y or left arrow.";
+            instructionsText2.text = "You can fall through the platform with Y or down arrow.";
             StartCoroutine(ClearMessage());
         }
     }

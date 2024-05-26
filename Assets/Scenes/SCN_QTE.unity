@@ -1831,7 +1831,7 @@ GameObject:
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1204373404
 Transform:
   m_ObjectHideFlags: 0
@@ -2257,57 +2257,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1436235922
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1436235923}
-  - component: {fileID: 1436235924}
-  m_Layer: 0
-  m_Name: WinCinematic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1436235923
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436235922}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8423691, y: -0.74092066, z: 0.98054975}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &1436235924
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436235922}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a70be4fa726f91846b9133c3b60f3544, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -1699350416319806545, guid: a70be4fa726f91846b9133c3b60f3544, type: 2}
-    value: {fileID: 1204373407}
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &1494681616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,8 +3170,6 @@ MonoBehaviour:
   - {fileID: 556339518}
   - {fileID: 570393869}
   Cinematique: {fileID: 1158130273}
-  winCinematic: {fileID: 0}
-  timingWindow: 2
 --- !u!1 &2066665174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,4 +3270,3 @@ SceneRoots:
   - {fileID: 1089612430}
   - {fileID: 1633585334}
   - {fileID: 1158130274}
-  - {fileID: 1436235923}

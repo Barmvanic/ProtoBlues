@@ -23,6 +23,6 @@ public class Script_Buttons : MonoBehaviour
 
     public void After_Reward()
     {
-        SceneManager.LoadScene("SCN_NIVEAU1_2");
+        SceneManager.LoadScene("SCN_NIVEAU1-2");
     }
 }

@@ -3434,7 +3434,6 @@ MonoBehaviour:
   - {fileID: 556339518}
   - {fileID: 570393869}
   Cinematique: {fileID: 0}
-  winCinematic: {fileID: 0}
   timingWindow: 2
 --- !u!1 &1993205526
 GameObject:
@@ -3445,8 +3444,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1993205527}
-  - component: {fileID: 1993205529}
   - component: {fileID: 1993205528}
+  - component: {fileID: 1993205529}
   m_Layer: 0
   m_Name: AfterReward
   m_TagString: Untagged
@@ -3495,11 +3494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 0}
     - {fileID: 11400000, guid: 7cc54e38febcad24ca3a35229b92c974, type: 2}
     m_Events:
-    - m_PersistentCalls:
-        m_Calls: []
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1993205528}

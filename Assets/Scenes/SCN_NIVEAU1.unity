@@ -8858,7 +8858,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!61 &416123161
 BoxCollider2D:
@@ -14479,7 +14478,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!212 &667808605
 SpriteRenderer:
@@ -18270,7 +18268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 0}
 --- !u!212 &851730509
 SpriteRenderer:
@@ -21197,7 +21194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 0}
 --- !u!212 &974874794
 SpriteRenderer:
@@ -23739,7 +23735,6 @@ Transform:
   - {fileID: 1387120893}
   - {fileID: 1866326194}
   - {fileID: 1756544674}
-  - {fileID: 1132064805}
   m_Father: {fileID: 85150977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1083555423 stripped
@@ -24577,37 +24572,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1486551355}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1132064804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1132064805}
-  m_Layer: 0
-  m_Name: InventoryNotes (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1132064805
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132064804}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.758348, y: 4.9982643, z: -4.3958883}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1075990241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1139508746
 GameObject:
@@ -28018,7 +27982,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 0}
 --- !u!212 &1337378221
 SpriteRenderer:
@@ -28172,7 +28135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!61 &1339703921
 BoxCollider2D:
@@ -29446,7 +29408,6 @@ GameObject:
   - component: {fileID: 1387120896}
   - component: {fileID: 1387120895}
   - component: {fileID: 1387120894}
-  - component: {fileID: 1387120898}
   m_Layer: 0
   m_Name: Note blanche  (2)
   m_TagString: Note
@@ -29542,7 +29503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!212 &1387120897
 SpriteRenderer:
@@ -29596,20 +29556,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1387120898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387120892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notes: 0
-  noteText: {fileID: 1314348050}
 --- !u!1 &1391159988
 GameObject:
   m_ObjectHideFlags: 0
@@ -33288,7 +33234,6 @@ GameObject:
   - component: {fileID: 1577492162}
   - component: {fileID: 1577492163}
   - component: {fileID: 1577492164}
-  - component: {fileID: 1577492165}
   m_Layer: 0
   m_Name: Note blanche 2
   m_TagString: Note
@@ -33376,7 +33321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!61 &1577492163
 BoxCollider2D:
@@ -33438,20 +33382,6 @@ MonoBehaviour:
   _useTestBeat: 0
   _pulseSize: 1.15
   _returnSpeed: 5
---- !u!114 &1577492165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577492157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notes: 0
-  noteText: {fileID: 1314348050}
 --- !u!4 &1587732475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8723513562826811418, guid: 2db10c79c614b7f4c88330175694128a,
@@ -36333,7 +36263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!212 &1734011007
 SpriteRenderer:
@@ -36915,7 +36844,6 @@ GameObject:
   - component: {fileID: 1756544677}
   - component: {fileID: 1756544676}
   - component: {fileID: 1756544675}
-  - component: {fileID: 1756544679}
   m_Layer: 0
   m_Name: Note blanche  (4)
   m_TagString: Note
@@ -37011,7 +36939,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!212 &1756544678
 SpriteRenderer:
@@ -37065,20 +36992,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1756544679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756544673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notes: 0
-  noteText: {fileID: 1314348050}
 --- !u!1 &1763221527
 GameObject:
   m_ObjectHideFlags: 0
@@ -38763,7 +38676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  target: {fileID: 0}
   timer: {fileID: 1520317781}
 --- !u!212 &1866326198
 SpriteRenderer:
