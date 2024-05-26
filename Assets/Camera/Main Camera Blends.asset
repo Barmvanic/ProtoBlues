@@ -16,7 +16,7 @@ MonoBehaviour:
   - m_From: 1_CenterPlayerFollowCAM
     m_To: 2_CenterPlayerFollowCAM
     m_Blend:
-      m_Style: 1
+      m_Style: 2
       m_Time: 2
       m_CustomCurve:
         serializedVersion: 2

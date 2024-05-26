@@ -33,10 +33,7 @@ public class MovementPlayer : MonoBehaviour
     //NOTECOUNT 
     public Inventory_notes nc; //notecount
 
-   
-
-
-
+    
     void Start()
     {
         Movement();
@@ -65,10 +62,17 @@ public class MovementPlayer : MonoBehaviour
         if (isGrounded)
         {
             animator.SetBool("isJumping", false);
-            
+            animator.SetBool("isFall", false);
+
         }
 
-      
+        if (!isGrounded)
+        {
+            animator.SetBool("isFall", true);
+
+        }
+
+
     }
 
     void Movement ()

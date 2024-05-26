@@ -55,7 +55,7 @@ public class QTESystem_Notes : MonoBehaviour
 
     // AUDIO
     private AudioSource audioSource;
-    //[SerializeField] private float timingWindow = 2f; // Time window for pressing the key in rhythm
+   
 
     void Start()
     {
@@ -160,19 +160,6 @@ public class QTESystem_Notes : MonoBehaviour
                     audioSource.PlayOneShot(QTEGen[QTEOrder[currentQTEIndex]].sound);
                     SetAlpha(currentQTE, 1);
                     StartCoroutine(Next(true));
-                    //if (timerPress - timer <= timingWindow) // check if the key is pressed within the time 
-                    //{
-                   
-                    //}
-                    //else
-                    //{
-                    //    StartCoroutine(Next(false)); // correct key but not in rythm
-                    //}                    //}
-                    //else
-                    //{
-                    //    StartCoroutine(Next(false)); // correct key but not in rythm
-                    //}
-          
                 }
                 else
                 {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f8b1e4bce23f8534b982ca63d27fc237
+guid: 2bf593aa6bd55a04e9d524c2d3cec40c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Cl\xE9_red_0"
+      name: Planche_QTE_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 56
-        height: 143
+        x: 513
+        y: 792
+        width: 142
+        height: 233
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ed6f596c3bbc9c45b0844a6f7d1b665
-      internalID: 12688375
+      spriteID: 3c240aa8849bd2d4e9e7c34a37472ddd
+      internalID: -1714146134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_QTE_1
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 870
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282c0accaa3ae2d499428ffb5f6e38bb
+      internalID: -534963808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Planche_QTE_2
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 870
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bd078735a42594f98143a681f9cc92
+      internalID: -964381120
       vertices: []
       indices: 
       edges: []
@@ -154,7 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "Cl\xE9_red_0": 12688375
+      Planche_QTE_0: -1714146134
+      Planche_QTE_1: -534963808
+      Planche_QTE_2: -964381120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

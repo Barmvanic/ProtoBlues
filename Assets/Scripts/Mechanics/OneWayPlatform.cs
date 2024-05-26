@@ -19,6 +19,7 @@ public class OneWayPlatform : MonoBehaviour
         //change the angle of the platform when the key is pressed 
         if(Input.GetButtonDown("FallThrough") && !isFalling)
         {
+
             StartCoroutine(FallThroughPlatform());
         }
     }
