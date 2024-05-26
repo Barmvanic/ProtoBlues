@@ -20,14 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
-    - time: 0
-      value: {fileID: 21300000, guid: 335b1489d15e347408fcbbd61e003042, type: 3}
-    - time: 0.1
-      value: {fileID: 21300000, guid: a61b932ba7f3f96498f5ab0b00f2e293, type: 3}
-    - time: 0.2
-      value: {fileID: 21300000, guid: e1f413548ffff8d4daa1e254af77a9a2, type: 3}
-    - time: 0.31666666
-      value: {fileID: 21300000, guid: 70d49060c9e08dd41a764e409e6e7785, type: 3}
+    - time: 0.016666668
+      value: {fileID: 21300000, guid: c7390b78831b2e047a198c94a4e613c9, type: 3}
+    - time: 0.13333334
+      value: {fileID: 21300000, guid: e78741685ab000549bc3686d1458f37d, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 946a0366fe27ba0448532cb877d40a39, type: 3}
+    - time: 0.36666667
+      value: {fileID: 21300000, guid: f6074e5de7626f24aa229a29705f9dc2, type: 3}
+    - time: 0.48333332
+      value: {fileID: 21300000, guid: 39d5bc0b51704974f808dd51404d3c4c, type: 3}
     - time: 1.8666667
       value: {fileID: 21300000, guid: 70d49060c9e08dd41a764e409e6e7785, type: 3}
     attribute: m_Sprite
@@ -52,10 +54,11 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 335b1489d15e347408fcbbd61e003042, type: 3}
-    - {fileID: 21300000, guid: a61b932ba7f3f96498f5ab0b00f2e293, type: 3}
-    - {fileID: 21300000, guid: e1f413548ffff8d4daa1e254af77a9a2, type: 3}
-    - {fileID: 21300000, guid: 70d49060c9e08dd41a764e409e6e7785, type: 3}
+    - {fileID: 21300000, guid: c7390b78831b2e047a198c94a4e613c9, type: 3}
+    - {fileID: 21300000, guid: e78741685ab000549bc3686d1458f37d, type: 3}
+    - {fileID: 21300000, guid: 946a0366fe27ba0448532cb877d40a39, type: 3}
+    - {fileID: 21300000, guid: f6074e5de7626f24aa229a29705f9dc2, type: 3}
+    - {fileID: 21300000, guid: 39d5bc0b51704974f808dd51404d3c4c, type: 3}
     - {fileID: 21300000, guid: 70d49060c9e08dd41a764e409e6e7785, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
