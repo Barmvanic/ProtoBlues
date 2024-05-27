@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Main Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: 1_CenterPlayerFollowCAM
-    m_To: 2_CenterPlayerFollowCAM
+  - m_From: VCAM1
+    m_To: VCAM2
     m_Blend:
-      m_Style: 2
-      m_Time: 2
+      m_Style: 3
+      m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
