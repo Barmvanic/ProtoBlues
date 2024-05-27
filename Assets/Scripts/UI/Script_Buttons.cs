@@ -25,4 +25,9 @@ public class Script_Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("SCN_NIVEAU1-2");
     }
+
+    public void Time_Out()
+    {
+        SceneManager.LoadScene("SCN_Main_Menu");
+    }
 }

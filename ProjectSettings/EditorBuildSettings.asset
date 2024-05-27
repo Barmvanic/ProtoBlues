@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SCN_NIVEAU1.unity
     guid: 3993156ae5be7e54e92e8e39d9cc8070
   - enabled: 1
+    path: Assets/Scenes/SCN_TimeOut.unity
+    guid: 7e93c50e60c01ad469b92b92d07ae0c5
+  - enabled: 1
     path: Assets/Scenes/SCN_QTE.unity
     guid: 0eb683d7ecc10454faa0e0d898b51499
   - enabled: 1
