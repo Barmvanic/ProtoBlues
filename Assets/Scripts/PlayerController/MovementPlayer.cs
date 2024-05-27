@@ -129,14 +129,14 @@ public class MovementPlayer : MonoBehaviour
 
             collision.GetComponent<CheckpointSystem>().CheckpointFeedback();
 
-            Debug.Log("collidedDEAD");
+            Debug.Log("checkpoint");
 
         }
-        //if (collision.CompareTag("Note"))
-        //{
-        //    Destroy(collision.gameObject);
-        //    nc.notes++;
-        //}
+        else if (collision.CompareTag("DeadZone"))
+        {
+            PlayerDead();
+            Debug.Log("Player entered dead zone");
+        }
 
     }
 
@@ -146,6 +146,23 @@ public class MovementPlayer : MonoBehaviour
     private void Checkpoint(Transform checkpointTransform)
     {
         LastCheckpoint = checkpointTransform; 
+    }
+
+    public void PlayerDead()
+    {
+        if (LastCheckpoint != null)
+        {
+            transform.position = LastCheckpoint.position;
+            rb.velocity = Vector2.zero; // Reset velocity
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFall", false);
+            animator.SetBool("DoubleJump", false);
+            Debug.Log("Player respawned at the last checkpoint");
+        }
+        else
+        {
+            Debug.LogError("No checkpoint set");
+        }
     }
 
     IEnumerator JumpTrigger()

@@ -10,6 +10,7 @@ TagManager:
   - Checkpoint
   - Note
   - Croche
+  - DeadZone
   layers:
   - Default
   - TransparentFX
