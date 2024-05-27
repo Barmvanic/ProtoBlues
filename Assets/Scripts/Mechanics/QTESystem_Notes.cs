@@ -35,7 +35,7 @@ public class QTESystem_Notes : MonoBehaviour
     private List<string> playerSequence = new List<string>();
 
     // TIMERS
-    [SerializeField] private float cooldownBetween = 1f; // cooldown result
+    [SerializeField] private float cooldownBetween = 1.0f; // cooldown result
     [SerializeField] private float timerPress = 3f; // time you have to press the QTE
     private bool waitingForKey;
     private float timer;
@@ -55,11 +55,10 @@ public class QTESystem_Notes : MonoBehaviour
 
     // AUDIO
     private AudioSource audioSource;
-   
 
     void Start()
     {
-        
+
         waitingForKey = true;
         timer = timerPress; // reset timer
 
@@ -67,7 +66,7 @@ public class QTESystem_Notes : MonoBehaviour
         PassBox.GetComponent<Text>().text = "";
         StartCoroutine(Starting());
 
-        /*audioSource = gameObject.AddComponent<AudioSource>()*/;
+        audioSource = gameObject.AddComponent<AudioSource>();
 
 
     }
@@ -76,7 +75,7 @@ public class QTESystem_Notes : MonoBehaviour
     {
 
         UpdateTrialsUI();
-        
+
 
         if (started)
         {
@@ -144,8 +143,8 @@ public class QTESystem_Notes : MonoBehaviour
 
             // currentQTE = Instantiate(QTEGen[qteIndex].qteObject, QTEPositions[positionIndex].position, Quaternion.identity); // instantiate QTE GameObject at ordered position
             currentQTE = QTEGen[qteIndex].qteObject;
-            Debug.Log(qteIndex); 
-            Debug.Log(QTEGen[qteIndex].qteObject); 
+            Debug.Log(qteIndex);
+            Debug.Log(QTEGen[qteIndex].qteObject);
             //SetAlpha(currentQTE, 1);
             waitingForKey = false;
             timer = timerPress;
@@ -159,7 +158,7 @@ public class QTESystem_Notes : MonoBehaviour
                     playerSequence.Add(QTEGen[QTEOrder[currentQTEIndex]].key); // Add key to player sequence
                     audioSource.PlayOneShot(QTEGen[QTEOrder[currentQTEIndex]].sound);
                     SetAlpha(currentQTE, 1);
-                    StartCoroutine(Next(true));
+                    StartCoroutine(Next(true)); // if good key
                 }
                 else
                 {
@@ -191,17 +190,8 @@ public class QTESystem_Notes : MonoBehaviour
         yield return new WaitForSeconds(cooldownBetween);
 
         Cinematique.Play();
-
-        yield return new WaitForSeconds(4f);
-        PassBox.GetComponent<Text>().text = "Your turn.";
-        yield return new WaitForSeconds(cooldownBetween * 0.7f );
-        PassBox.GetComponent<Text>().text = "3";
-        yield return new WaitForSeconds(cooldownBetween * 0.7f );
-        PassBox.GetComponent<Text>().text = "2";
-        yield return new WaitForSeconds(cooldownBetween * 0.7f );
-        PassBox.GetComponent<Text>().text = "1";
-        yield return new WaitForSeconds(cooldownBetween * 0.7f );
-        PassBox.GetComponent<Text>().text = "";
+        yield return new WaitForSeconds(4.5f);
+        PassBox.GetComponent<Text>().text = "Now, your turn.";
         started = true;
         Debug.Log("Starting");
     }
@@ -232,11 +222,11 @@ public class QTESystem_Notes : MonoBehaviour
         }
 
         // Erase result
-        yield return new WaitForSeconds(cooldownBetween);
+        yield return new WaitForSeconds(cooldownBetween / 10);
         PassBox.GetComponent<Text>().text = "";
 
         // Next
-        float wait = cooldownBetween * 2 / 3;
+        float wait = (cooldownBetween * 2 / 3);
         yield return new WaitForSeconds(wait);
         waitingForKey = true;
         timer = timerPress; // reset timer
@@ -257,12 +247,12 @@ public class QTESystem_Notes : MonoBehaviour
         {
             PassBox.GetComponent<Text>().text = "Not bad, Rookie.";
             yield return new WaitForSeconds(cooldownBetween);
-            SceneManager.LoadScene("SCN_QTE_REWARD");
+            SceneManager.LoadScene("SCN_NIVEAU1-2");
             Debug.Log("WIN");
         }
         else // FAIL
         {
-            PassBox.GetComponent<Text>().text = "You don't have the ryhtm.";
+            PassBox.GetComponent<Text>().text = "You'll have to do better.";
             yield return new WaitForSeconds(cooldownBetween);
             GameManager.Instance.noteCount = notereset;
             SceneManager.LoadScene("SCN_NIVEAU1");
@@ -301,6 +291,7 @@ public class QTESystem_Notes : MonoBehaviour
         }
     }
 }
+
 
 
 

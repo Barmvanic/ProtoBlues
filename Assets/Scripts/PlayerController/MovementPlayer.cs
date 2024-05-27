@@ -33,7 +33,7 @@ public class MovementPlayer : MonoBehaviour
     //NOTECOUNT 
     public Inventory_notes nc; //notecount
 
-    
+
     void Start()
     {
         Movement();
@@ -132,15 +132,16 @@ public class MovementPlayer : MonoBehaviour
             Debug.Log("collidedDEAD");
 
         }
+        //if (collision.CompareTag("Note"))
+        //{
+        //    Destroy(collision.gameObject);
+        //    nc.notes++;
+        //}
 
-        if (collision.CompareTag("Note"))
-        {
-            Destroy(collision.gameObject);
-            nc.notes++; 
-        }
     }
 
-    
+
+
 
     private void Checkpoint(Transform checkpointTransform)
     {

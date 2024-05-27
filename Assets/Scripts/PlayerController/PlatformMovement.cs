@@ -27,6 +27,5 @@ public class PlatformMovement : MonoBehaviour
     {
         transform.parent = _originalParent;
 
-
     }
 }

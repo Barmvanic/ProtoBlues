@@ -554,7 +554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &943224217
 AudioSource:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7c468e967e151dc478e7138ad7de6080, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5e6b19d00409cba4ea913176bf44f1d2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.692
   m_Pitch: 1
@@ -1092,8 +1092,6 @@ PlayableDirector:
     value: {fileID: 1584767760}
   - key: {fileID: -6846046949244341758, guid: cb19b3272e61f6d408335c5dbf35d301, type: 2}
     value: {fileID: 1527037940}
-  - key: {fileID: -2396645268625578367, guid: cb19b3272e61f6d408335c5dbf35d301, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1237612777

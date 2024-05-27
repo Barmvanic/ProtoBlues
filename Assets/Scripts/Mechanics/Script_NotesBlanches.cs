@@ -6,19 +6,20 @@ using UnityEngine.SceneManagement;
 public class Script_NotesBlanches : MonoBehaviour
 {
 
-    public float speed = 4f;
+
     [SerializeField] Script_Timer timer;
+    public Inventory_notes nc; //notecount
 
     void Start()
     {
 
     }
 
-    
+
     void Update()
     {
-        
-        
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,16 +28,18 @@ public class Script_NotesBlanches : MonoBehaviour
         {
             timer.remainingTime += 10f;
             Debug.Log("+10");
-            // gameObject.GetComponent<Collider2D>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
             // moveNote = true;
-            Destroy(gameObject); 
+            //nc.notes++;
+            Destroy(gameObject);
 
             // Incrémente la variable noteCount dans le script ChangeSceneQTE
             GameManager.Instance.noteCount++;
 
             Debug.Log("Note collected");
 
-     
+
         }
     }
- }
+}
+
