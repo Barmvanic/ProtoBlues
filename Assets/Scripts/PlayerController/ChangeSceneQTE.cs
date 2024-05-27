@@ -7,13 +7,12 @@ public class ChangeSceneQTE : MonoBehaviour
 {
     public Text messageText;
     public int requiredNoteCount = 3;
-    private GameManager gameManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (gameManager.noteCount >= requiredNoteCount)
+            if (GameManager.Instance.noteCount >= requiredNoteCount)
             {
                 // Load the next scene if the player has collected the required number of notes
                 SceneManager.LoadScene("SCN_QTE");

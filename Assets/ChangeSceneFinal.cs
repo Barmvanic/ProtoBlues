@@ -9,7 +9,6 @@ public class ChangeSceneFinal : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
     public int requiredNoteCount = 5;
-    private GameManager gameManager;
 
     private void Start()
     {
@@ -24,7 +23,7 @@ public class ChangeSceneFinal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (gameManager.noteCount >= requiredNoteCount)
+            if (GameManager.Instance.noteCount >= requiredNoteCount)
             {
                 // Load the next scene if the player has collected the required number of notes
                 SceneManager.LoadScene("SCN_DEVIL");
