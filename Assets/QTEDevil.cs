@@ -7,18 +7,18 @@ using System.Collections.Generic;
 using UnityEngine.Playables;
 
 [System.Serializable]
-public class QTEItem // permits to set up the key with the image 
+public class QTEItem2 // permits to set up the key with the image 
 {
     public GameObject qteObject; // the GameObject representing the QTE (with the image)
     public string key; // the key associated with this QTE (like"BKey")
     public AudioClip sound; // the sound associated with this QTE
 }
 
-public class QTESystem_Notes : MonoBehaviour
+public class QTEDevil : MonoBehaviour
 {
     // public static GameManager instance; // for notecount
     [SerializeField] private int notereset = 0;
-    [SerializeField] private int requiredSuccess = 3; // number of successful QTE for passing lvl
+    [SerializeField] private int requiredSuccess = 6; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     [SerializeField] private int trials = 0;// count of trials 
 
@@ -103,7 +103,7 @@ public class QTESystem_Notes : MonoBehaviour
     {
         if (trialsText != null)
         {
-            trialsText.text = "Trials :" + trials.ToString() + "/4";
+            trialsText.text = "Trials :" + trials.ToString() + "/6";
         }
         else
         {
@@ -184,7 +184,7 @@ public class QTESystem_Notes : MonoBehaviour
     IEnumerator Starting()
     {
         yield return new WaitForSeconds(cooldownBetween * 2);
-        PassBox.GetComponent<Text>().text = "Listen carefully.";
+        PassBox.GetComponent<Text>().text = "Listen.";
         yield return new WaitForSeconds(cooldownBetween);
         PassBox.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(cooldownBetween);
@@ -245,17 +245,19 @@ public class QTESystem_Notes : MonoBehaviour
     {
         if (win) // WIN
         {
-            PassBox.GetComponent<Text>().text = "Not bad, Rookie.";
+            PassBox.GetComponent<Text>().text = "Good luck and be the best.";
             yield return new WaitForSeconds(cooldownBetween);
-            SceneManager.LoadScene("SCN_QTE_REWARD");
+            PassBox.GetComponent<Text>().text = "See you very soon.";
+            yield return new WaitForSeconds(cooldownBetween);
+            SceneManager.LoadScene("");
             Debug.Log("WIN");
         }
         else // FAIL
         {
-            PassBox.GetComponent<Text>().text = "You'll have to do better.";
+            PassBox.GetComponent<Text>().text = "Guess, you stay with me, Rookie.";
             yield return new WaitForSeconds(cooldownBetween);
             GameManager.Instance.noteCount = notereset;
-            SceneManager.LoadScene("SCN_NIVEAU1");
+            SceneManager.LoadScene("SCN_TimeOut");
             Debug.Log("LOSE");
         }
     }
@@ -291,9 +293,3 @@ public class QTESystem_Notes : MonoBehaviour
         }
     }
 }
-
-
-
-
-
-

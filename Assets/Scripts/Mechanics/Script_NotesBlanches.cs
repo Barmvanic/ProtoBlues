@@ -31,10 +31,13 @@ public class Script_NotesBlanches : MonoBehaviour
             gameObject.GetComponent<Collider2D>().enabled = false;
             // moveNote = true;
             //nc.notes++;
-            Destroy(gameObject);
+
 
             // Incrémente la variable noteCount dans le script ChangeSceneQTE
             GameManager.Instance.noteCount++;
+
+            Destroy(gameObject);
+
 
             Debug.Log("Note collected");
 

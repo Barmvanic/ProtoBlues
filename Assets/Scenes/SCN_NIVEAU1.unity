@@ -1331,7 +1331,9 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -8276623484043874889, guid: 5665db21fb76bff4f9bbc6fae220039a, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &53890143
@@ -20591,7 +20593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8494b94b18e8c2540aa91e59a0425a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notes: 0
+  gm: {fileID: 1404123461}
   noteText: {fileID: 1314348050}
 --- !u!1 &938700907
 GameObject:
@@ -30672,7 +30674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1520317781}
-  nc: {fileID: 0}
+  nc: {fileID: 936874512}
 --- !u!212 &1387120897
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34643,7 +34645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1520317781}
-  nc: {fileID: 0}
+  nc: {fileID: 936874512}
 --- !u!61 &1577492163
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38061,7 +38063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1520317781}
-  nc: {fileID: 0}
+  nc: {fileID: 936874512}
 --- !u!212 &1756544678
 SpriteRenderer:
   m_ObjectHideFlags: 0

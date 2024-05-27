@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Inventory_notes : MonoBehaviour
 {
 
-    public int notes;
+    [SerializeField] GameManager gm;
     public TextMeshProUGUI noteText;
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Inventory_notes : MonoBehaviour
     void Update()
     {
 
-        noteText.text = ": " + notes.ToString();
+        noteText.text = ": " + GameManager.Instance.noteCount.ToString();
     }
 }
 
