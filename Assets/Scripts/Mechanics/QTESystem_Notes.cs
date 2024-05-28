@@ -254,8 +254,8 @@ public class QTESystem_Notes : MonoBehaviour
         {
             PassBox.GetComponent<Text>().text = "You'll have to do better.";
             yield return new WaitForSeconds(cooldownBetween);
-            GameManager.Instance.noteCount = notereset;
             SceneManager.LoadScene("SCN_NIVEAU1");
+            GameManager.Instance.noteCount = notereset;
             Debug.Log("LOSE");
         }
     }

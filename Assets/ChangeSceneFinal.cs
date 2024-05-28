@@ -26,7 +26,7 @@ public class ChangeSceneFinal : MonoBehaviour
             if (GameManager.Instance.noteCount >= requiredNoteCount)
             {
                 // Load the next scene if the player has collected the required number of notes
-                SceneManager.LoadScene("SCN_DEVIL");
+                SceneManager.LoadScene("SCN_DEVIL_CINEMATIC");
             }
             else
             {

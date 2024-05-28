@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SCN_NIVEAU1-2.unity
     guid: d2762a3cd7a732e459386e9041447172
   - enabled: 1
-    path: Assets/Scenes/SCN_DEVIL.unity
+    path: Assets/Scenes/SCN_DEVIL_CINEMATIC.unity
     guid: b76e430452a5355459c5a64bf40fd5a3
+  - enabled: 1
+    path: Assets/Scenes/SCN_DEVIL.unity
+    guid: 7e5ee77fe51c3114d9ab2edda82504b7
   m_configObjects: {}

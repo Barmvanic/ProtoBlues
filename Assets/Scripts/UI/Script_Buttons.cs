@@ -30,4 +30,9 @@ public class Script_Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("SCN_Main_Menu");
     }
+
+    public void Final_Scene()
+    {
+        SceneManager.LoadScene("SCN_DEVIL");
+    }
 }

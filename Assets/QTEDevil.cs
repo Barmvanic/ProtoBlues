@@ -16,9 +16,9 @@ public class QTEItem2 // permits to set up the key with the image
 
 public class QTEDevil : MonoBehaviour
 {
-    // public static GameManager instance; // for notecount
+    //public static GameManager instance; // for notecount
     [SerializeField] private int notereset = 0;
-    [SerializeField] private int requiredSuccess = 6; // number of successful QTE for passing lvl
+    [SerializeField] private int requiredSuccess = 5; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     [SerializeField] private int trials = 0;// count of trials 
 
@@ -103,7 +103,7 @@ public class QTEDevil : MonoBehaviour
     {
         if (trialsText != null)
         {
-            trialsText.text = "Trials :" + trials.ToString() + "/6";
+            trialsText.text = "Trials :" + trials.ToString() + "/5";
         }
         else
         {
@@ -249,7 +249,7 @@ public class QTEDevil : MonoBehaviour
             yield return new WaitForSeconds(cooldownBetween);
             PassBox.GetComponent<Text>().text = "See you very soon.";
             yield return new WaitForSeconds(cooldownBetween);
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene("SCN_FINAL");
             Debug.Log("WIN");
         }
         else // FAIL
