@@ -203,7 +203,7 @@ public class QTEDevil : MonoBehaviour
         // Display result
         if (!pass)
         {
-            PassBox.GetComponent<Text>().text = "Try again.";
+            PassBox.GetComponent<Text>().text = "Bad.";
 
             for (int i = 0; i < playerSequence.Count; i++)
             {

@@ -8,7 +8,7 @@ using TMPro;
 public class ChangeSceneFinal : MonoBehaviour
 {
     public TextMeshProUGUI messageText;
-    public int requiredNoteCount = 5;
+    public int requiredNoteCount = 9;
 
     private void Start()
     {

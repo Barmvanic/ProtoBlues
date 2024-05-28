@@ -54,7 +54,7 @@ public class MainMenu : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("SCN_NIVEAU1");
+        SceneManager.LoadScene("SCN_IntroCinematic");
     }
 
     //void OpenOptions()

@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class Script_Buttons : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void Start_Button()
-    {
-        SceneManager.LoadScene("SCN_NIVEAU1");
-    }
+    //public void Start_Button()
+    //{
+    //    SceneManager.LoadScene("SCN_IntroCinematic");
+    //}
 
     //public void Options_Button()
     //{
@@ -28,11 +28,16 @@ public class Script_Buttons : MonoBehaviour
 
     public void Time_Out()
     {
-        SceneManager.LoadScene("SCN_Main_Menu");
+        SceneManager.LoadScene("SCN_NIVEAU1");
     }
 
     public void Final_Scene()
     {
         SceneManager.LoadScene("SCN_DEVIL");
+    }
+
+    public void Tuto_Scene()
+    {
+        SceneManager.LoadScene("SCN_NIVEAU1");
     }
 }
