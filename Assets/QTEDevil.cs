@@ -245,7 +245,7 @@ public class QTEDevil : MonoBehaviour
     {
         if (win) // WIN
         {
-            PassBox.GetComponent<Text>().text = "Good luck and be the best.";
+            PassBox.GetComponent<Text>().text = "Congrats,rookie.";
             yield return new WaitForSeconds(cooldownBetween);
             PassBox.GetComponent<Text>().text = "See you very soon.";
             yield return new WaitForSeconds(cooldownBetween);
@@ -254,10 +254,10 @@ public class QTEDevil : MonoBehaviour
         }
         else // FAIL
         {
-            PassBox.GetComponent<Text>().text = "Guess, you stay with me, Rookie.";
+            PassBox.GetComponent<Text>().text = "No wonder you got fired.";
             yield return new WaitForSeconds(cooldownBetween);
             GameManager.Instance.noteCount = notereset;
-            SceneManager.LoadScene("SCN_TimeOut");
+            SceneManager.LoadScene("SCN_NIVEAU1-2");
             Debug.Log("LOSE");
         }
     }

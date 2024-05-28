@@ -18,7 +18,7 @@ public class QTESystem_Notes : MonoBehaviour
 {
     // public static GameManager instance; // for notecount
     [SerializeField] private int notereset = 0;
-    [SerializeField] private int requiredSuccess = 3; // number of successful QTE for passing lvl
+    [SerializeField] private int requiredSuccess = 5; // number of successful QTE for passing lvl
     [SerializeField] private int success = 0; // count of success
     [SerializeField] private int trials = 0;// count of trials 
 
@@ -252,7 +252,7 @@ public class QTESystem_Notes : MonoBehaviour
         }
         else // FAIL
         {
-            PassBox.GetComponent<Text>().text = "You'll have to do better.";
+            PassBox.GetComponent<Text>().text = "And you called yourself a Blues man?";
             yield return new WaitForSeconds(cooldownBetween);
             SceneManager.LoadScene("SCN_NIVEAU1");
             GameManager.Instance.noteCount = notereset;

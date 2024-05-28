@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SCN_DEVIL.unity
     guid: 7e5ee77fe51c3114d9ab2edda82504b7
+  - enabled: 1
+    path: Assets/Scenes/SCN_FINAL.unity
+    guid: df3a4cd80de31504a9822ef477b000c3
   m_configObjects: {}
