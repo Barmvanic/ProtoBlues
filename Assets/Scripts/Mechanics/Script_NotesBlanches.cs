@@ -29,16 +29,9 @@ public class Script_NotesBlanches : MonoBehaviour
             timer.remainingTime += 10f;
             Debug.Log("+10");
             gameObject.GetComponent<Collider2D>().enabled = false;
-            // moveNote = true;
-            //nc.notes++;
-
-
             // Incrémente la variable noteCount dans le script ChangeSceneQTE
             GameManager.Instance.noteCount++;
-
             Destroy(gameObject);
-
-
             Debug.Log("Note collected");
 
 
