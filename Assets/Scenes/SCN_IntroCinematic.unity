@@ -722,6 +722,8 @@ PlayableDirector:
     value: {fileID: 602219203}
   - key: {fileID: -6583907551917593711, guid: 5665db21fb76bff4f9bbc6fae220039a, type: 2}
     value: {fileID: 807454683}
+  - key: {fileID: 8285484391423379031, guid: 5665db21fb76bff4f9bbc6fae220039a, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - e825d79884a83b84ca7bff069e5953b2: {fileID: 1413692358}
@@ -4450,7 +4452,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4707,7 +4709,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294638330
+    rgba: 16448250
   m_fontColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5504,7 +5506,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5756,7 +5758,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294638330
+    rgba: 16448250
   m_fontColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7070,7 +7072,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294638330
+    rgba: 16448250
   m_fontColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -9803,7 +9805,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -12971,7 +12973,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 188869e01b654e14aa4c3f2ed203ed5c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.003
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -15961,7 +15963,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -17533,7 +17535,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190261
+    rgba: 181
   m_fontColor: {r: 0.70980394, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
