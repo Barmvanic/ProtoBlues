@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
+//[System.Serializable]
+//public class SoundNotes // permits to set up the key with the image 
+//{
+   
+//    public AudioClip sound; // the sound associated with this QTE
+//}
 public class Script_Notes : MonoBehaviour
 {
     [SerializeField] Script_Timer timer;

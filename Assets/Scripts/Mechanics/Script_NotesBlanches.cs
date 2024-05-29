@@ -21,7 +21,7 @@ public class Script_NotesBlanches : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !showed)
         {
             showed = true; 
             timer.remainingTime += 10f;
