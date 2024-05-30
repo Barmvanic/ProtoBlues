@@ -40,4 +40,14 @@ public class Script_Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("SCN_NIVEAU1");
     }
+    public void Credits_Scene()
+    {
+        SceneManager.LoadScene("SCN_CREDITS");
+    }
+
+    public void Back_MM()
+    {
+        SceneManager.LoadScene("SCN_Main_Menu");
+    }
+
 }
