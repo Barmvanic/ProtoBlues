@@ -19,8 +19,10 @@ public class PlatformMovement : MonoBehaviour
 
     public void SetParent(Transform newParent) // to P1 stay on the moving platform 
     {
-        // _originalParent = transform.parent;
+        //_originalParent = transform.parent;
         transform.parent = newParent;
+
+        Debug.Log("newParent"); 
     }
 
     public void ResetParent()
