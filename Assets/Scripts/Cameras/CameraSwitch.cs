@@ -10,13 +10,13 @@ public class CameraSwitch : MonoBehaviour
     // private int activeCameraIndex = 0; // keeps track of wich camera is currently active 
 
     [SerializeField] int camerain;
-    [SerializeField] int cameraout;
+    // [SerializeField] int cameraout;
 
 
     private Collider2D _coll;
 
-    [SerializeField] public bool yExitDirection;
-    [SerializeField] public bool xExitDirection;
+    // [SerializeField] public bool yExitDirection;
+    // [SerializeField] public bool xExitDirection;
 
     void Start()
     {
@@ -39,12 +39,12 @@ public class CameraSwitch : MonoBehaviour
                 }
             }
             if (switchyes)
-            SwitchCamera();
+                SwitchCamera();
             Debug.Log("Player enter the trigger");
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    /* private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -74,12 +74,12 @@ public class CameraSwitch : MonoBehaviour
                 }
             }
         }
-    }
+    } */
 
     private void SwitchCamera()
     {
 
-        int switchto;
+        /* int switchto;
         if (virtualCameras[camerain].Priority > virtualCameras[cameraout].Priority)
         {
             switchto = cameraout;
@@ -90,7 +90,13 @@ public class CameraSwitch : MonoBehaviour
         {
             virtualCameras[i].Priority = 10;
         }
-        virtualCameras[switchto].Priority = 20;
+        virtualCameras[switchto].Priority = 20; */
+
+        for (int i = 0; i < virtualCameras.Length; i++)
+        {
+            virtualCameras[i].Priority = 10;
+        }
+        virtualCameras[camerain].Priority = 20;
 
 
     }

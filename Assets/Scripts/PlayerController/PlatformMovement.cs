@@ -28,6 +28,5 @@ public class PlatformMovement : MonoBehaviour
     public void ResetParent()
     {
         transform.parent = _originalParent;
-
     }
 }
