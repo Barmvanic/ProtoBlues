@@ -48,6 +48,7 @@ public class Script_Buttons : MonoBehaviour
     public void Back_MM()
     {
         SceneManager.LoadScene("SCN_Main_Menu");
+        GameManager.Instance.noteCount = 0;
     }
 
 }
