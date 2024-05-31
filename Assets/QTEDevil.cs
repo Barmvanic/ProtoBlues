@@ -245,8 +245,8 @@ public class QTEDevil : MonoBehaviour
     {
         if (win) // WIN
         {
-            PassBox.GetComponent<Text>().text = "Congrats,rookie.";
-            yield return new WaitForSeconds(cooldownBetween);
+            PassBox.GetComponent<Text>().text = "You've got all my chords.";
+            yield return new WaitForSeconds(cooldownBetween * 3);
             PassBox.GetComponent<Text>().text = "See you very soon.";
             yield return new WaitForSeconds(cooldownBetween);
             SceneManager.LoadScene("SCN_FINAL");
