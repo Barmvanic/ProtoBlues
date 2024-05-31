@@ -8,6 +8,7 @@ public class Script_Timer : MonoBehaviour
 {
 
     [SerializeField] TextMeshProUGUI Timer_Text;
+
     public float remainingTime;
 
     void Update()
@@ -19,6 +20,7 @@ public class Script_Timer : MonoBehaviour
             if (remainingTime < 10)
             {
                 Timer_Text.color = Color.red; //under 10 seconds left 
+                GameManager.Instance.noteCount = 0; 
             }
 
         
